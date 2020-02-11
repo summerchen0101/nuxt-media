@@ -1,6 +1,7 @@
 
 module.exports = {
   mode: 'universal',
+  loading: '~/components/Loading.vue',
   /*
   ** Headers of the page
   */
@@ -18,7 +19,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  // loading: { color: '#fff' },
   /*
   ** Global CSS
   */
@@ -60,6 +61,15 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      config.module.rules.push({
+        enforce: 'pre',
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        exclude: /(node_modules)/,
+        options: {
+          fix: true
+        }
+      })
     }
-  }
+  },
 }

@@ -9,7 +9,9 @@ module.exports = {
   },
   extends: [
     '@nuxtjs',
-    'plugin:nuxt/essential',
+    'plugin:nuxt/base',
+    'plugin:vue/essential',
+    'eslint:recommended',
   ],
   // add your custom rules here
   rules: {

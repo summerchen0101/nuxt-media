@@ -1,21 +1,21 @@
 <template>
   <div class="container">
     <Menu />
-    <logo />
+    <h3>TV List</h3>
+    <TVList />
   </div>
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
-// import axios from 'axios'
-import Logo from '~/components/Logo.vue'
+import TVList from '~/components/TVList.vue'
 import Menu from '~/components/Menu.vue'
 export default {
   components: {
-    Logo,
+    TVList,
     Menu
   },
-  methods: {
+  async asyncData ({ params, app, store }) {
+    await store.dispatch('tv/getList')
   }
 }
 </script>

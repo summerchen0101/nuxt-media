@@ -1,7 +1,7 @@
 <template>
   <div id="registered_dialog_inner">
     <div class="login_dialog_title">
-      <span><img :src="`${$root.resUrl}/images/login_dialog.png`" alt=""></span>
+      <span><img src="/images/login_dialog.png" alt=""></span>
       <span>会员注册</span>
     </div>
     <form class="form-horizontal login_dialog_form">

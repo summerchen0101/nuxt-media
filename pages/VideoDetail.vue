@@ -240,7 +240,7 @@
               <div class="tv_detail_hot_select_list">
                 <a v-for="i in 10" :key="i" href="tv_korea_detail.html" class="video_unit">
                   <div class="tv_detail_hot_select_img imgLiquidFill imgLiquid">
-                    <img :src="`${$root.resUrl}/images/index/tv_img1.jpg`" alt="">
+                    <img src="/images/index/tv_img1.jpg" alt="">
                   </div>
                   <div class="tv_detail_hot_select_info">
                     <div class="tv_detail_hot_select_title">明天和你</div>
@@ -251,7 +251,7 @@
             </div>
             <!--tv_detail_hot_select end-->
             <div class="ad-box mb-20">
-              <a href="" target="_blank"><img :src="`${$root.resUrl}/images/ad-img-l.png`" alt=""></a>
+              <a href="" target="_blank"><img src="/images/ad-img-l.png" alt=""></a>
             </div>
             <div class="tv_detail_comment">
               <div class="tv_detail_head">
@@ -259,7 +259,7 @@
               </div>
               <div class="comment_input_box">
                 <div class="comment_img">
-                  <img :src="`${$root.resUrl}/images/tv_korea_detail/comment_img.jpg`" alt="">
+                  <img src="/images/tv_korea_detail/comment_img.jpg" alt="">
                 </div>
                 <div class="comment_txt">
                   <form action="">
@@ -274,7 +274,7 @@
               <div class="comment_list">
                 <div v-for="i in 4" :key="i" class="comment_unit">
                   <div class="comment_img imgLiquidFill imgLiquid">
-                    <img :src="`${$root.resUrl}/images/tv_korea_detail/comment_img2.jpg`" alt="">
+                    <img src="/images/tv_korea_detail/comment_img2.jpg" alt="">
                   </div>
                   <div class="comment_txt">
                     <div class="comment_user">
@@ -308,7 +308,7 @@
           </div>
           <div class="tv_detail_right col-xs-12 col-sm-4 col-md-3">
             <div class="ad-box mb-20">
-              <a href="" target="_blank"><img :src="`${$root.resUrl}/images/ad-img-s.png`" alt=""></a>
+              <a href="" target="_blank"><img src="/images/ad-img-s.png" alt=""></a>
             </div>
             <div class="maybe_like_box">
               <div class="maybe_like_mtitle">
@@ -317,7 +317,7 @@
               <div class="maybe_like_list">
                 <a v-for="i in 10" :key="i" href="" class="maybe_like_unit">
                   <div class="maybe_like_img imgLiquidFill imgLiquid">
-                    <img :src="`${$root.resUrl}/images/member/collect_img1.jpg`" alt="">
+                    <img src="/images/member/collect_img1.jpg" alt="">
                     <div class="maybe_like_date">2017-01-09</div>
                   </div>
                   <div class="maybe_like_info">

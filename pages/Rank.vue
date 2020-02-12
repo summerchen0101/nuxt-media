@@ -3,7 +3,7 @@
     <div id="page-content-wrapper">
       <!--banner start-->
       <div class="page_banner imgLiquidFill imgLiquid">
-        <img :src="`${$root.resUrl}/images/page_banner.jpg`" alt="">
+        <img src="/images/page_banner.jpg" alt="">
       </div>
       <!--banner end-->
       <div class="page_container">
@@ -33,7 +33,7 @@
                 <div class="tv_sub_list">
                   <a v-for="i in 20" :key="i" href="tv_korea_detail.html" class="video_unit">
                     <div class="tv_unit_img tv_sub_img imgLiquidFill imgLiquid">
-                      <img :src="`${$root.resUrl}/images/tv_korea_list/tv_korea_list_img.jpg`" alt="">
+                      <img src="/images/tv_korea_list/tv_korea_list_img.jpg" alt="">
                     </div>
                     <div class="index_info">
                       <div class="index_unit_title"> 明天和你</div>
@@ -51,7 +51,7 @@
                 <div class="tv_sub_list">
                   <a v-for="i in 20" :key="i" href="tv_korea_detail.html" class="video_unit">
                     <div class="tv_unit_img tv_sub_img imgLiquidFill imgLiquid">
-                      <img :src="`${$root.resUrl}/images/tv_korea_list/tv_korea_list_img4.jpg`" alt="">
+                      <img src="/images/tv_korea_list/tv_korea_list_img4.jpg" alt="">
                     </div>
                     <div class="index_info">
                       <div class="index_unit_title"> 明天和你</div>
@@ -69,7 +69,7 @@
                 <div class="tv_sub_list">
                   <a v-for="i in 20" :key="i" href="tv_korea_detail.html" class="video_unit">
                     <div class="tv_unit_img tv_sub_img imgLiquidFill imgLiquid">
-                      <img :src="`${$root.resUrl}/images/tv_korea_list/tv_korea_list_img3.jpg`" alt="">
+                      <img src="/images/tv_korea_list/tv_korea_list_img3.jpg" alt="">
                     </div>
                     <div class="index_info">
                       <div class="index_unit_title"> 明天和你</div>
@@ -87,7 +87,7 @@
                 <div class="tv_sub_list">
                   <a v-for="i in 20" :key="i" href="tv_korea_detail.html" class="video_unit">
                     <div class="tv_unit_img tv_sub_img imgLiquidFill imgLiquid">
-                      <img :src="`${$root.resUrl}/images/tv_korea_list/tv_korea_list_img2.jpg`" alt="">
+                      <img src="/images/tv_korea_list/tv_korea_list_img2.jpg" alt="">
                     </div>
                     <div class="index_info">
                       <div class="index_unit_title"> 明天和你</div>

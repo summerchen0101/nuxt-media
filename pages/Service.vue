@@ -3,7 +3,7 @@
     <div id="page-content-wrapper">
       <!--banner start-->
       <div class="page_banner imgLiquidFill imgLiquid">
-        <img :src="`${$root.resUrl}/images/page_banner.jpg`" alt="">
+        <img src="/images/page_banner.jpg" alt="">
       </div>
       <!--banner end-->
       <div class="page_container">

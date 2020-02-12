@@ -4,7 +4,7 @@
     <div id="page-content-wrapper">
       <!--banner start-->
       <div class="page_banner imgLiquidFill imgLiquid">
-        <img :src="`${$root.resUrl}/images/page_banner.jpg`" alt="">
+        <img src="/images/page_banner.jpg" alt="">
       </div>
       <!--banner end-->
       <div class="page_container">
@@ -21,7 +21,7 @@
           <div class="search_tv_detail">
             <a v-for="i in 15" :key="i" href="tv_korea_detail.html" class="search_unit video_unit">
               <div class="index_tv_img index_unit_img imgLiquidFill imgLiquid">
-                <img :src="`${$root.resUrl}/images/index/tv_img2.jpg`" alt="">
+                <img src="/images/index/tv_img2.jpg" alt="">
               </div>
               <div class="index_info">
                 <div class="index_unit_title">明天和你</div>
@@ -43,7 +43,7 @@
             <div class="search_tv_list">
               <div v-for="i in 10" :key="i" class="search_tv_unit">
                 <div class="search_tv_img imgLiquidFill imgLiquid">
-                  <img :src="`${$root.resUrl}/images/member/collect_img1.jpg`" alt="">
+                  <img src="/images/member/collect_img1.jpg" alt="">
                   <div>
                     <div class="search_tv_view">
                       <i class="fa fa-play" />3,534

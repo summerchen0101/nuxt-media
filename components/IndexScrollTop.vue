@@ -7,16 +7,14 @@
       <li><a href="#section4">综艺</a></li>
       <li><a href="#section5">成人</a></li>
     </ul>
-    <a class="scrollTop"><i class="fa fa-caret-up"></i>TOP</a>
+    <a class="scrollTop"><i class="fa fa-caret-up" />TOP</a>
   </div>
 </template>
 
 <script>
 export default {
-  name: "IndexScrollTop",
+  name: 'IndexScrollTop',
   components: {},
-  mounted() {}
-};
-
-function animationEffect() {}
+  mounted () {}
+}
 </script>

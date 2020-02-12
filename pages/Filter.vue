@@ -100,7 +100,7 @@
         </div>
         <div class="tv_sub_right col-xs-12 col-sm-9 col-md-10">
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img :src="`${$root.resUrl}/images/ad-img-l.png`" alt=""></a>
+            <a href="" target="_blank"><img src="/images/ad-img-l.png" alt=""></a>
           </div>
           <div class="filter_box">
             <span class="filter_title">筛选条件：</span>
@@ -118,7 +118,7 @@
           <div class="tv_sub_list">
             <router-link v-for="i in 20" :key="i" :to="{name: 'VideoDetail'}" class="index_tv_unit video_unit">
               <div class="index_tv_img index_unit_img imgLiquidFill imgLiquid">
-                <img :src="`${$root.resUrl}/images/index/tv_img1.jpg`" alt="">
+                <img src="/images/index/tv_img1.jpg" alt="">
               </div>
               <div class="index_info">
                 <div class="index_unit_title">
@@ -131,7 +131,7 @@
             </router-link>
           </div>
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img :src="`${$root.resUrl}/images/ad-img-l.png`" alt=""></a>
+            <a href="" target="_blank"><img src="/images/ad-img-l.png" alt=""></a>
           </div>
           <div class="page_list">
             <a href=""><i class="fa fa-angle-left" aria-hidden="true" /></a>

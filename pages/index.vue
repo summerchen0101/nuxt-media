@@ -8,6 +8,11 @@
         <img src="images/index/pc-banner1.jpg" class="show-pc">
       </div>
     </div>
+    <ul>
+      <li v-for="item in tvs" :key="item.id">
+        {{ item.name }}
+      </li>
+    </ul>
     <!-- <el-carousel class="banner-box">
       <el-carousel-item v-for="item in 4" :key="item" class="item">
         <img src="images/index/pc-banner1.jpg" class="show-pc">
@@ -279,17 +284,25 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Dashboard from '../components/Dashboard'
 export default {
   name: 'Home',
   components: { Dashboard },
+  async asyncData ({ store, app, params }) {
+    await store.dispatch('getList', { time: '2020-02-04' })
+  },
   data () {
     return {}
+  },
+  computed: {
+    ...mapGetters({
+      tvs: 'tv/tvs'
+    })
   },
   created () {
   },
   mounted () {
-    this.$store.dispatch('getBranchInfo', { time: '2020-02-04' })
     loadScript('/plugins/slick/slick.js')
     setTimeout(() => {
       loadScript('/js/script.js')

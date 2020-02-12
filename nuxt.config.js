@@ -55,6 +55,7 @@ module.exports = {
     '@/plugins/element-ui',
     '@/plugins/mixins',
     '@/plugins/jquery',
+    '@/plugins/components',
   ],
   /*
   ** Nuxt.js dev-modules

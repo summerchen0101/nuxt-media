@@ -5,7 +5,7 @@
         <span /> <span /> <span />
       </div>
       <router-link class="logo" :to="{name: 'Home'}">
-        <img :src="`${$root.resUrl}/images/logo.png`" alt="">
+        <img src="/images/logo.png" alt="">
       </router-link>
       <nav class="menuBar">
         <div class="nav-content">

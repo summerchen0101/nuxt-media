@@ -3,7 +3,7 @@
     <div id="page-content-wrapper">
       <!--banner start-->
       <div class="page_banner imgLiquidFill imgLiquid">
-        <img :src="`${$root.resUrl}/images/page_banner.jpg`" alt="">
+        <img src="/images/page_banner.jpg" alt="">
       </div>
       <!--banner end-->
       <div class="page_container">
@@ -26,7 +26,7 @@
                     <form class="form-horizontal contact_form">
                       <div class="setting_upload_img_box row">
                         <div class="col-xs-12 col-md-2 setting_upload_img">
-                          <img :src="`${$root.resUrl}/images/member/setting_upload_img.png`" alt="">
+                          <img src="/images/member/setting_upload_img.png" alt="">
                         </div>
                         <div class="col-xs-12 col-md-10 setting_upload_txt">
                           <button class="setting_upload_img_btn">

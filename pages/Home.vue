@@ -287,7 +287,7 @@ export default {
     return {}
   },
   mounted () {
-    this.$store.dispatch('getBranchInfo', { time: '2020-02-04' })
+    this.$store.dispatch('getList', { time: '2020-02-04' })
     // animationEffect()
 
     setTimeout(animationEffect.bind(this), 300)

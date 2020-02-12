@@ -3,7 +3,7 @@
     <div id="page-content-wrapper">
       <!--banner start-->
       <div class="page_banner imgLiquidFill imgLiquid">
-        <img :src="`${$root.resUrl}/images/page_banner.jpg`" alt="">
+        <img src="/images/page_banner.jpg" alt="">
       </div>
       <!--banner end-->
       <div class="page_container">
@@ -41,7 +41,7 @@
                 <div v-for="i in 10" :key="i" class="member_video_unit">
                   <a href="" class="member_delete"><i class="fa fa-times" /></a>
                   <div class="member_video_img imgLiquidFill imgLiquid">
-                    <img :src="`${$root.resUrl}/images/member/collect_img1.jpg`" alt="">
+                    <img src="/images/member/collect_img1.jpg" alt="">
                     <div class="member_video_time">
                       05:56
                     </div>

@@ -11,7 +11,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "æŠ–å½±ç”µå½± DOING MOVIE",
+    title: "抖影电影 DOING MOVIE",
     link: [
       {rel: "icon", type: "image/x-icon", href: "/images/favicon.png"},
       {rel: "stylesheet", href: "/bootstrap/css/bootstrap.css"},
@@ -41,7 +41,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  // loading: { color: '#fff' },
+  // loading: { color: '#666' },
   /*
   ** Global CSS
   */

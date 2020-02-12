@@ -277,9 +277,15 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
-  name: 'Home',
+  name: 'Index',
   async asyncData ({ store, app, params }) {
     await store.dispatch('tv/getList', { time: '2020-02-04' })
+    const result = await new Promise((resolve) => {
+      setTimeout(function () {
+        resolve({ name: 'world' })
+      }, 2000)
+    })
+    return result
   },
   data () {
     return {}
@@ -292,8 +298,9 @@ export default {
   created () {
   },
   mounted () {
+    console.log('mounted')
     this.$mixin.loadScript('/plugins/slick/slick.js')
-    setTimeout(() => this.$mixin.loadScript('/js/script.js'), 300)
+    setTimeout(() => this.$mixin.loadScript('/js/script.js'), 100)
   },
   head () {
     return {

@@ -2,18 +2,18 @@
   <footer class="footer_box">
     <div class="container">
       <div class="footer_link">
-        <router-link :to="{name: 'About'}">
+        <NuxtLink :to="{name: 'About'}">
           关于我们
-        </router-link>|
-        <router-link :to="{name: 'FAQ'}">
+        </NuxtLink>|
+        <NuxtLink :to="{name: 'FAQ'}">
           常见问题
-        </router-link>|
-        <router-link :to="{name: 'Privacy'}">
+        </NuxtLink>|
+        <NuxtLink :to="{name: 'Privacy'}">
           隐私权政策
-        </router-link>|
-        <router-link :to="{name: 'Service'}">
+        </NuxtLink>|
+        <NuxtLink :to="{name: 'Service'}">
           服务介绍
-        </router-link>
+        </NuxtLink>
       </div>
       <div class="copyright">
         Copyright © 2019 All rights reserved

@@ -12,18 +12,18 @@
       </div>
     </div>
     <div class="member_list_pc">
-      <router-link :to="{name: 'Record'}">
+      <NuxtLink :to="{name: 'Record'}">
         <i class="fa fa-history" />观看纪录
-      </router-link>
-      <router-link :to="{name: 'Favorite'}">
+      </NuxtLink>
+      <NuxtLink :to="{name: 'Favorite'}">
         <i class="fa fa-heart-o" />我的收藏
-      </router-link>
-      <router-link :to="{name: 'Message'}">
+      </NuxtLink>
+      <NuxtLink :to="{name: 'Message'}">
         <i class="icon-commenting" />我的消息
-      </router-link>
-      <router-link :to="{name: 'Profile'}">
+      </NuxtLink>
+      <NuxtLink :to="{name: 'Profile'}">
         <i class="fa fa-cog" />帐号设置
-      </router-link>
+      </NuxtLink>
     </div>
     <select name="here" onchange="location.href=this.options[this.selectedIndex].value;" class="member_list_mb">
       <option value="">

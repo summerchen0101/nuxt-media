@@ -4,31 +4,31 @@
       <div class="navbar-hamburger">
         <span /> <span /> <span />
       </div>
-      <router-link class="logo" :to="{name: 'Home'}">
+      <NuxtLink class="logo" :to="{name: 'Home'}">
         <img src="/images/logo.png" alt="">
-      </router-link>
+      </NuxtLink>
       <nav class="menuBar">
         <div class="nav-content">
           <ul class="menu_list">
             <li>
-              <router-link :to="{name: 'Filter'}">
+              <NuxtLink :to="{name: 'Filter'}">
                 <span><i class="icon-television" /></span><span>戏剧</span>
-              </router-link>
+              </NuxtLink>
             </li>
             <li>
-              <router-link :to="{name: 'Filter'}">
+              <NuxtLink :to="{name: 'Filter'}">
                 <span><i class="icon-movie-symbol-of-video-camera" /></span><span>电影</span>
-              </router-link>
+              </NuxtLink>
             </li>
             <li>
-              <router-link :to="{name: 'Filter'}">
+              <NuxtLink :to="{name: 'Filter'}">
                 <span><i class="icon-cartoons-character-with-big-eyes" /></span><span>动漫</span>
-              </router-link>
+              </NuxtLink>
             </li>
             <li>
-              <router-link :to="{name: 'Filter'}">
+              <NuxtLink :to="{name: 'Filter'}">
                 <span><i class="icon-karaoke-microphone-icon" /></span><span>综艺</span>
-              </router-link>
+              </NuxtLink>
             </li>
             <li>
               <a>
@@ -37,46 +37,46 @@
               <span class="arr"><i class="fa fa-caret-down" /></span>
               <ul class="submenu_list">
                 <li>
-                  <router-link :to="{name: 'Filter'}">
+                  <NuxtLink :to="{name: 'Filter'}">
                     长片
-                  </router-link>
+                  </NuxtLink>
                 </li>
                 <li>
-                  <router-link :to="{name: 'Filter'}">
+                  <NuxtLink :to="{name: 'Filter'}">
                     短片
-                  </router-link>
+                  </NuxtLink>
                 </li>
                 <li>
-                  <router-link :to="{name: 'Filter'}">
+                  <NuxtLink :to="{name: 'Filter'}">
                     自拍
-                  </router-link>
+                  </NuxtLink>
                 </li>
                 <li>
-                  <router-link :to="{name: 'Filter'}">
+                  <NuxtLink :to="{name: 'Filter'}">
                     写真
-                  </router-link>
+                  </NuxtLink>
                 </li>
                 <li>
-                  <router-link :to="{name: 'Filter'}">
+                  <NuxtLink :to="{name: 'Filter'}">
                     漫画
-                  </router-link>
+                  </NuxtLink>
                 </li>
                 <li>
-                  <router-link :to="{name: 'Filter'}">
+                  <NuxtLink :to="{name: 'Filter'}">
                     文学
-                  </router-link>
+                  </NuxtLink>
                 </li>
                 <li>
-                  <router-link :to="{name: 'Filter'}">
+                  <NuxtLink :to="{name: 'Filter'}">
                     说书
-                  </router-link>
+                  </NuxtLink>
                 </li>
               </ul>
             </li>
             <li>
-              <router-link :to="{name: 'Rank'}">
+              <NuxtLink :to="{name: 'Rank'}">
                 <span><i class="icon-ranking" /></span><span>排行</span>
-              </router-link>
+              </NuxtLink>
             </li>
             <li>
               <a data-toggle="modal" data-target="#searchModal"><span><i class="fa fa-search" /></span><span>搜寻</span></a>

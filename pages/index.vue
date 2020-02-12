@@ -22,7 +22,7 @@
           <!--head_title end-->
           <div class="index_contentBox index_contentBox_column">
             <div class="index_tv_list">
-              <router-link v-for="i in 10" :key="i" :to="{name: 'VideoDetail'}" class="index_tv_unit video_unit">
+              <NuxtLink v-for="i in 10" :key="i" :to="{name: 'VideoDetail'}" class="index_tv_unit video_unit">
                 <div class="index_tv_img index_unit_img imgLiquidFill imgLiquid">
                   <img src="/images/index/tv_img1.jpg" alt="">
                 </div>
@@ -34,7 +34,7 @@
                     更新至6集
                   </div>
                 </div>
-              </router-link>
+              </NuxtLink>
             </div>
             <!--index_tv_list end-->
             <div class="rank_box">

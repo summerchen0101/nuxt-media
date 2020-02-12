@@ -1,5 +1,6 @@
 
 let webpack = require('webpack');
+require('dotenv').config()
 module.exports = {
   // router: {
   //   base: '/app'
@@ -20,7 +21,6 @@ module.exports = {
       {rel: "stylesheet", href: "/plugins/slick/slick-theme.css"},
       {rel: "stylesheet", href: "/plugins/fancyBox/jquery.fancybox.css"},
       {rel: "stylesheet", href: "/css/style.css"},
-      {rel: "stylesheet", href: "/css/media.css"},
     ],
     script: [
       { type: 'text/javascript', src: '/plugins/jquery.min.js' },
@@ -69,13 +69,17 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: process.env.VUE_APP_API_PATH,
+    withCredentials: true,
   },
   /*
   ** Build configuration

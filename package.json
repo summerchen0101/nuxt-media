@@ -11,7 +11,8 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "res": "node build/resource.js",
-    "deploy": "yarn install && yarn build && yarn start"
+    "env": "heroku config:get API_BASE_URL -s  >> .env",
+    "deploy": "yarn env && yarn install && yarn build && yarn start"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.9.5",

@@ -78,7 +78,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: process.env.VUE_APP_API_PATH,
+    baseURL: process.env.API_BASE_URL,
     withCredentials: true,
   },
   /*

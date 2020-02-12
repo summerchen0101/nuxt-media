@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <Dashboard id="wrapper">
     <!-- /#sidebar-wrapper -->
     <div class="page_container">
       <div class="container tv_sub_container row">
@@ -19,7 +19,7 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li>
-                  <NuxtLink>电视剧</NuxtLink>
+                  <a href="">电视剧</a>
                 </li>
                 <li><a href="">综艺</a></li>
                 <li><a href="">电影</a></li>
@@ -100,7 +100,7 @@
         </div>
         <div class="tv_sub_right col-xs-12 col-sm-9 col-md-10">
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img :src="`${$root.resUrl}/images/ad-img-l.png`" alt=""></a>
+            <a href="" target="_blank"><img src="/images/ad-img-l.png" alt=""></a>
           </div>
           <div class="filter_box">
             <span class="filter_title">筛选条件：</span>
@@ -118,7 +118,7 @@
           <div class="tv_sub_list">
             <NuxtLink v-for="i in 20" :key="i" :to="{name: 'VideoDetail'}" class="index_tv_unit video_unit">
               <div class="index_tv_img index_unit_img imgLiquidFill imgLiquid">
-                <img :src="`${$root.resUrl}/images/index/tv_img1.jpg`" alt="">
+                <img src="/images/index/tv_img1.jpg" alt="">
               </div>
               <div class="index_info">
                 <div class="index_unit_title">
@@ -131,7 +131,7 @@
             </NuxtLink>
           </div>
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img :src="`${$root.resUrl}/images/ad-img-l.png`" alt=""></a>
+            <a href="" target="_blank"><img src="/images/ad-img-l.png" alt=""></a>
           </div>
           <div class="page_list">
             <a href=""><i class="fa fa-angle-left" aria-hidden="true" /></a>
@@ -152,29 +152,25 @@
     <!--page_container end-->
     <Footer />
     <ScrollTop />
-  </div>
+  </Dashboard>
 </template>
 
 <script>
 export default {
   name: 'FilterPage',
   components: {},
-  metaInfo () {
-    return {
-      link: [
-        { rel: 'stylesheet', href: `${this.$root.resUrl}/css/tv_cat_list.css` }
-      ]
-    }
-  },
   data () {
     return {}
   },
   mounted () {
-    setTimeout(animationEffect.bind(this), 300)
+    this.$mixin.loadScript('/js/script.js')
+  },
+  head () {
+    return {
+      link: [
+        { rel: 'stylesheet', href: '/css/tv_cat_list.css' }
+      ]
+    }
   }
-}
-
-function animationEffect () {
-  $('.imgLiquidFill').imgLiquid()
 }
 </script>

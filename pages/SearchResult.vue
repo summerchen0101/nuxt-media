@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <Dashboard id="wrapper">
     <!-- /#sidebar-wrapper -->
     <div id="page-content-wrapper">
       <!--banner start-->
@@ -117,29 +117,25 @@
         </div>
       </div>
     </div>
-  </div>
+  </Dashboard>
 </template>
 
 <script>
 export default {
   name: 'SearchResult',
   components: {},
-  metaInfo () {
-    return {
-      link: [
-        { rel: 'stylesheet', href: `${this.$root.resUrl}/css/search_list.css` }
-      ]
-    }
-  },
   data () {
     return {}
   },
   mounted () {
-    setTimeout(animationEffect.bind(this), 300)
+    this.$mixin.loadScript('/js/script.js')
+  },
+  head () {
+    return {
+      link: [
+        { rel: 'stylesheet', href: '/css/search_list.css' }
+      ]
+    }
   }
-}
-
-function animationEffect () {
-  // $('.imgLiquidFill').imgLiquid()
 }
 </script>

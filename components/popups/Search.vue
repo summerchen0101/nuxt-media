@@ -75,7 +75,7 @@ export default {
   mounted () {},
   methods: {
     onClickedSearch () {
-      this.$('#searchModal').modal('hide')
+      // this.$('#searchModal').modal('hide')
       this.$router.push({ name: 'SearchResult' })
     }
   }

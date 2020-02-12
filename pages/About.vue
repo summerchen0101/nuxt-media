@@ -45,7 +45,7 @@ export default {
     return {}
   },
   mounted () {
-    setTimeout(() => this.$mixin.loadScript('/js/script.js'), 300)
+    this.$mixin.loadScript('/js/script.js')
   },
   head () {
     return {

@@ -32,5 +32,6 @@ export default {
   padding-top: 200px;
   font-size: 30px;
   font-family: sans-serif;
+  z-index: 999;
 }
 </style>

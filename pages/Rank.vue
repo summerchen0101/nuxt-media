@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <Dashboard id="wrapper">
     <div id="page-content-wrapper">
       <!--banner start-->
       <div class="page_banner imgLiquidFill imgLiquid">
@@ -104,29 +104,25 @@
       <Footer />
       <ScrollTop />
     </div>
-  </div>
+  </Dashboard>
 </template>
 
 <script>
 export default {
   name: 'Rank',
   components: {},
-  metaInfo () {
-    return {
-      link: [
-        { rel: 'stylesheet', href: `${this.$root.resUrl}/css/ranking.css` }
-      ]
-    }
-  },
   data () {
     return {}
   },
   mounted () {
-    setTimeout(animationEffect.bind(this), 300)
+    this.$mixin.loadScript('/js/script.js')
+  },
+  head () {
+    return {
+      link: [
+        { rel: 'stylesheet', href: '/css/ranking.css' }
+      ]
+    }
   }
-}
-
-function animationEffect () {
-  // $('.imgLiquidFill').imgLiquid()
 }
 </script>

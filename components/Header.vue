@@ -4,7 +4,7 @@
       <div class="navbar-hamburger">
         <span /> <span /> <span />
       </div>
-      <NuxtLink class="logo" :to="{name: 'Home'}">
+      <NuxtLink class="logo" :to="{name: 'index'}">
         <img src="/images/logo.png" alt="">
       </NuxtLink>
       <nav class="menuBar">

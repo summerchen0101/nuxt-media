@@ -1,5 +1,11 @@
 import Vue from 'vue'
 
-Vue.prototype.$root = {
-  resUrl: '~assets'
+const loadScript = function (src) {
+  const scr = document.createElement('script')
+  scr.src = src
+  document.body.appendChild(scr)
+}
+
+Vue.prototype.$mixin = {
+  loadScript
 }

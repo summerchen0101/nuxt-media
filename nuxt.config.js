@@ -2,16 +2,16 @@
 let webpack = require('webpack');
 require('dotenv').config()
 module.exports = {
-  // router: {
-  //   base: '/app'
-  // },
+  router: {
+    linkActiveClass: 'select'
+  },
   mode: 'universal',
   loading: '~/components/Loading.vue',
   /*
   ** Headers of the page
   */
   head: {
-    title: "抖影电影 DOING MOVIE",
+    title: "æŠ–å½±ç”µå½± DOING MOVIE",
     link: [
       {rel: "icon", type: "image/x-icon", href: "/images/favicon.png"},
       {rel: "stylesheet", href: "/bootstrap/css/bootstrap.css"},

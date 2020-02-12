@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <Dashboard id="wrapper">
     <div id="page-content-wrapper">
       <!--banner start-->
       <div class="page_banner imgLiquidFill imgLiquid">
@@ -77,7 +77,7 @@
       <Footer />
       <ScrollTop />
     </div>
-  </div>
+  </Dashboard>
 </template>
 
 <script>
@@ -87,38 +87,19 @@ export default {
   components: {
     SubPagesMenu
   },
-  metaInfo () {
-    return {
-      link: [
-        { rel: 'stylesheet', href: `${this.$root.resUrl}/css/member.css` },
-        { rel: 'stylesheet', href: `${this.$root.resUrl}/css/qa.css` }
-      ]
-    }
-  },
   data () {
     return {}
   },
   mounted () {
-    setTimeout(animationEffect.bind(this), 100)
+    this.$mixin.loadScript('/js/script.js')
+  },
+  head () {
+    return {
+      link: [
+        { rel: 'stylesheet', href: '/css/member.css' },
+        { rel: 'stylesheet', href: '/css/qa.css' }
+      ]
+    }
   }
-}
-
-function animationEffect () {
-  // $('.imgLiquidFill').imgLiquid()
-
-  // $('.qa_box > a').on('click', function () {
-  //   if ($('.qa_box').hasClass('active')) {
-  //     $(this).removeClass('active')
-  //     $(this).siblings('.qa_content').slideUp(200)
-  //     $('.qa_box > a i').removeClass('fa-caret-down').addClass('fa-caret-down')
-  //   } else {
-  //     $('.qa_box > a i').removeClass('fa-caret-down').addClass('fa-caret-down')
-  //     $(this).find('i').removeClass('fa-caret-down')
-  //     $('.qa_box > a').removeClass('active')
-  //     $(this).addClass('active')
-  //     $('.qa_content').slideUp(200)
-  //     $(this).siblings('.qa_content').slideDown(200)
-  //   }
-  // })
 }
 </script>

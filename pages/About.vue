@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <Dashboard id="wrapper">
     <div id="page-content-wrapper">
       <!--banner start-->
       <div class="page_banner imgLiquidFill imgLiquid">
@@ -31,7 +31,7 @@
       <Footer />
       <ScrollTop />
     </div>
-  </div>
+  </Dashboard>
 </template>
 
 <script>
@@ -41,22 +41,18 @@ export default {
   components: {
     SubPagesMenu
   },
-  metaInfo () {
-    return {
-      link: [
-        { rel: 'stylesheet', href: `${this.$root.resUrl}/css/member.css` }
-      ]
-    }
-  },
   data () {
     return {}
   },
   mounted () {
-    setTimeout(animationEffect.bind(this), 100)
+    setTimeout(() => this.$mixin.loadScript('/js/script.js'), 300)
+  },
+  head () {
+    return {
+      link: [
+        { rel: 'stylesheet', href: '/css/member.css' }
+      ]
+    }
   }
-}
-
-function animationEffect () {
-  // $('.imgLiquidFill').imgLiquid()
 }
 </script>

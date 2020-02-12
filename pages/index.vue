@@ -276,10 +276,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Dashboard from '../components/Dashboard'
 export default {
   name: 'Home',
-  components: { Dashboard },
   async asyncData ({ store, app, params }) {
     await store.dispatch('tv/getList', { time: '2020-02-04' })
   },
@@ -294,23 +292,16 @@ export default {
   created () {
   },
   mounted () {
-    loadScript('/plugins/slick/slick.js')
-    setTimeout(() => loadScript('/js/script.js'), 300)
+    this.$mixin.loadScript('/plugins/slick/slick.js')
+    setTimeout(() => this.$mixin.loadScript('/js/script.js'), 300)
   },
   head () {
     return {
-      title: '抖影电影 DOING MOVIE',
       link: [
         { rel: 'stylesheet', href: '/css/index.css' }
       ]
     }
   }
-}
-
-export function loadScript (src) {
-  const scr = document.createElement('script')
-  scr.src = src
-  document.body.appendChild(scr)
 }
 </script>
 

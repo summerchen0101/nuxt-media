@@ -3,22 +3,13 @@
     <div ref="banner" class="banner-box">
       <div class="item">
         <img src="images/index/pc-banner1.jpg" class="show-pc">
+        <img src="images/index/mb-banner1.jpg" alt="" class="show-mb">
       </div>
       <div class="item">
         <img src="images/index/pc-banner1.jpg" class="show-pc">
+        <img src="images/index/mb-banner1.jpg" alt="" class="show-mb">
       </div>
     </div>
-    <ul>
-      <li v-for="item in tvs" :key="item.id">
-        {{ item.name }}
-      </li>
-    </ul>
-    <!-- <el-carousel class="banner-box">
-      <el-carousel-item v-for="item in 4" :key="item" class="item">
-        <img src="images/index/pc-banner1.jpg" class="show-pc">
-        <img src="images/index/mb-banner1.jpg" alt="" class="show-mb">
-      </el-carousel-item>
-    </el-carousel> -->
     <div class="index_container">
       <!--index block start-->
       <div class="index_block">
@@ -33,7 +24,7 @@
             <div class="index_tv_list">
               <router-link v-for="i in 10" :key="i" :to="{name: 'VideoDetail'}" class="index_tv_unit video_unit">
                 <div class="index_tv_img index_unit_img imgLiquidFill imgLiquid">
-                  <img src="~assets/images/index/tv_img1.jpg" alt="">
+                  <img src="/images/index/tv_img1.jpg" alt="">
                 </div>
                 <div class="index_info">
                   <div class="index_unit_title">
@@ -52,7 +43,7 @@
               </div>
               <div class="rank_content">
                 <div class="rank_img imgLiquidFill imgLiquid">
-                  <img src="~assets/images/index/rank_img1.jpg" alt="">
+                  <img src="/images/index/rank_img1.jpg" alt="">
                 </div>
                 <div class="rank_list">
                   <a href="tv_korea_detail.html" class="rank_unit first_unit">
@@ -93,7 +84,7 @@
           </div>
           <!--index_content end-->
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img src="~assets/images/ad-img-index.png" alt=""></a>
+            <a href="" target="_blank"><img src="/images/ad-img-index.png" alt=""></a>
           </div>
         </div>
         <!--container end-->
@@ -112,7 +103,7 @@
             <div class="index_variety_list_big">
               <a href="tv_korea_detail.html" class="index_variety_unit video_unit">
                 <div class="index_variety_img index_unit_img imgLiquidFill imgLiquid">
-                  <img src="~assets/images/index/variety_img1.jpg" alt="">
+                  <img src="/images/index/variety_img1.jpg" alt="">
                 </div>
                 <div class="index_info">
                   <div class="index_unit_title">明天和你</div>
@@ -123,7 +114,7 @@
             <div class="index_variety_list">
               <a v-for="i in 3" :key="i" href="tv_korea_detail.html" class="index_variety_unit video_unit">
                 <div class="index_variety_img index_unit_img imgLiquidFill imgLiquid">
-                  <img src="~assets/images/index/variety_img2.jpg" alt="">
+                  <img src="/images/index/variety_img2.jpg" alt="">
                 </div>
                 <div class="index_info">
                   <div class="index_unit_title">明天和你</div>
@@ -134,7 +125,7 @@
           </div>
           <!--index_content end-->
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img src="~assets/images/ad-img-index.png" alt=""></a>
+            <a href="" target="_blank"><img src="/images/ad-img-index.png" alt=""></a>
           </div>
         </div>
         <!--container end-->
@@ -152,7 +143,7 @@
             <div class="index_movie_list">
               <a v-for="i in 10" :key="i" href="tv_korea_detail.html" class="index_movie_unit video_unit">
                 <div class="index_movie_img index_unit_img imgLiquidFill imgLiquid">
-                  <img src="~assets/images/index/movie_img1.jpg" alt="">
+                  <img src="/images/index/movie_img1.jpg" alt="">
                 </div>
                 <div class="index_info">
                   <div class="index_unit_title index_movie_title">
@@ -170,7 +161,7 @@
               </div>
               <div class="rank_content">
                 <div class="rank_img imgLiquidFill imgLiquid">
-                  <img src="~assets/images/index/rank_img2.jpg" alt="">
+                  <img src="/images/index/rank_img2.jpg" alt="">
                 </div>
                 <div class="rank_list">
                   <a href="tv_korea_detail.html" class="rank_unit first_unit">
@@ -211,7 +202,7 @@
           </div>
           <!--index_content end-->
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img src="~assets/images/ad-img-index.png" alt=""></a>
+            <a href="" target="_blank"><img src="/images/ad-img-index.png" alt=""></a>
           </div>
         </div>
         <!--container end-->
@@ -230,7 +221,7 @@
             <div class="index_smovie_list">
               <a v-for="i in 10" :key="i" href="tv_korea_detail.html" class="index_slide_unit video_unit">
                 <div class="index_smovie_img index_unit_img imgLiquidFill imgLiquid">
-                  <img src="~assets/images/index/smovie_img1.jpg" alt="">
+                  <img src="/images/index/smovie_img1.jpg" alt="">
                 </div>
                 <div class="index_info">
                   <div class="index_unit_title"> 明天和你</div>
@@ -241,7 +232,7 @@
           </div>
           <!--index_content end-->
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img src="~assets/images/ad-img-index.png" alt=""></a>
+            <a href="" target="_blank"><img src="/images/ad-img-index.png" alt=""></a>
           </div>
         </div>
         <!--container end-->
@@ -259,7 +250,7 @@
             <div class="index_cartoons_list">
               <a v-for="i in 10" :key="i" href="tv_korea_detail.html" class="index_slide_unit video_unit">
                 <div class="index_smovie_img index_unit_img imgLiquidFill imgLiquid">
-                  <img src="~assets/images/index/smovie_img1.jpg" alt="">
+                  <img src="/images/index/smovie_img1.jpg" alt="">
                 </div>
                 <div class="index_info">
                   <div class="index_unit_title"> 明天和你</div>
@@ -270,7 +261,7 @@
           </div>
           <!--index_content end-->
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img src="~assets/images/ad-img-index.png" alt=""></a>
+            <a href="" target="_blank"><img src="/images/ad-img-index.png" alt=""></a>
           </div>
         </div>
         <!--container end-->
@@ -290,7 +281,7 @@ export default {
   name: 'Home',
   components: { Dashboard },
   async asyncData ({ store, app, params }) {
-    await store.dispatch('getList', { time: '2020-02-04' })
+    await store.dispatch('tv/getList', { time: '2020-02-04' })
   },
   data () {
     return {}
@@ -304,13 +295,14 @@ export default {
   },
   mounted () {
     loadScript('/plugins/slick/slick.js')
-    setTimeout(() => {
-      loadScript('/js/script.js')
-    }, 300)
+    setTimeout(() => loadScript('/js/script.js'), 300)
   },
   head () {
     return {
-      title: '抖影电影 DOING MOVIE'
+      title: '抖影电影 DOING MOVIE',
+      link: [
+        { rel: 'stylesheet', href: '/css/index.css' }
+      ]
     }
   }
 }

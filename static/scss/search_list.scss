@@ -1,0 +1,271 @@
+.search_tv_header .top_search_box{
+    display: none;
+}
+.search_bar_head{
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 0 15px;
+}
+.search_bar_head > span{
+    font-size: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #444444;
+}
+.search_bar_head > span b{
+    font-weight: inherit;
+    color: #ff443f;
+}
+.search_form{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+.search_form > input{
+    width: 800px;
+    height: 45px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    padding: 0 15px;
+}
+.search_form > button{
+    position: absolute;
+    right:0;
+    top: 0;
+    height: 45px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border:none;
+    background: #ff443f;
+    width: 100px;
+    color: #fff;
+    font-size: 16px;
+}
+.search_form > button:hover{
+    color: #fff;
+    background: #de2d28;
+}
+.search_form > button i{
+    margin-right: 3px;
+    display: inline-block;
+    position: relative;
+    top: -1px;
+}
+.search_tv_detail{
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ccc;
+    .search_unit{
+        float: inherit;
+        width: calc(100% / 5 - 12px);
+        &:nth-child(5n+5){
+            margin-right: 0;
+        }
+    }
+}
+.search_tv_detail_resultBox{
+    .search_tv_list{
+        clear: both;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+        border-bottom: 1px solid #ccc;
+    }
+}
+.search_tv_sort{
+    display: inline-block;
+}
+.search_tv_sort a{
+    color: #333;
+}
+.search_tv_sort a:hover, .search_tv_sort a.select{
+    color: #ff443f;
+}
+.search_tv_sort > a::after{
+    content: "";
+    display: inline-block;
+    margin: 0 5px;
+    height: 10px;
+    width: 1px;
+    background: #cccccc;
+}
+.search_tv_sort > a:last-child::after{
+    display: none;
+}
+.search_tv_totalResult{
+    float: right;
+}
+.search_tv_totalResult b{
+    color: #ff443f;
+    font-weight: normal;
+}
+.search_tv_unit{
+    display: inline-block;
+    width: calc(100% / 5 - 16px);
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.search_tv_unit:nth-child(5n+5){
+    margin-right: 0;
+}
+.search_tv_img{
+    position: relative;
+    height: 135px;
+}
+.search_tv_img > div{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 4%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 4%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 4%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+}
+.search_tv_img > div > div{
+    display: inline-block;
+    width: calc(50% - 3px);
+    color: #fff;
+    padding: 0 5px;
+}
+.search_tv_view i{
+    margin-right: 5px;
+}
+.search_tv_time{
+    text-align: right;
+}
+.search_tv_title{
+    color: #555555;
+    margin: 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.search_tv_title:hover{
+    color: #ff443f;
+}
+.search_keyword{
+    color: #ff443f;
+    font-weight: bold;
+}
+.search_tv_user_info > div{
+    display: inline-block;
+    width: calc(50% - 3px);
+    color: #999999;
+}
+.search_tv_user_info > div i{
+    margin-right: 5px;
+}
+.search_tv_user_post{
+    text-align: right;
+}
+.search_tv_relative_title{
+    color: #333333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.search_tv_relative_content{
+    background: #fbfbfb;
+    padding: 15px;
+}
+.search_tv_relative_content a{
+    color: #666666;
+    width: calc(100% / 5 - 5px);
+    display: inline-block;
+    margin:5px 0;
+}
+.search_tv_relative_content a::before{
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #d1d1d1;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.search_tv_sort > a.search_tv_filterBtn.collapsed::after {
+    content: "\f107";
+    font: normal normal normal 14px/1 FontAwesome;
+    display: inline-block;
+    background: transparent;
+}
+.search_tv_sort > a.search_tv_filterBtn::after{
+    content: "\f106";
+    background: transparent;
+    font: normal normal normal 14px/1 FontAwesome;
+}
+@media screen and (max-width: 1170px) {
+	/*search_tv*/
+	.search_tv_deatil_num{
+		width: 100%;
+		padding-right: 0;
+	}
+	.search_tv_deatil_num a:nth-child(15n+15) {
+		margin-right: 10px;
+	}
+}
+@media(max-width:991px){
+    /*tv_search*/
+    .search_bar_head > span{
+		margin-bottom: 10px;
+		text-align: left;
+	}
+	.search_bar_head > span, .search_form{
+		display: block;
+	}
+	.search_form > input{
+		width: 100%;
+	}
+	.search_tv_unit {
+		width: calc(100% / 3 - 13px);
+	}
+	.search_tv_unit:nth-child(5n+5){
+		margin-right: 15px;
+	}
+	.search_tv_unit:nth-child(3n+3){
+		margin-right: 0;
+	}
+	.search_tv_unit:last-child{
+		display: none;
+	}
+	.search_tv_relative_content a{
+		width: calc(100% / 3 - 5px);
+	}
+}
+@media screen and (max-width: 600px) {
+	/*tv_search*/
+	
+	.search_tv_unit {
+		width: calc(100% / 2 - 13px);
+	}
+	.search_tv_unit:nth-child(5n+5), .search_tv_unit:nth-child(3n+3){
+		margin-right: 15px;
+	}
+	.search_tv_unit:nth-child(2n+2){
+		margin-right: 0;
+	}
+	.search_tv_unit:last-child{
+		display: none;
+	}
+}
+@media screen and (max-width: 575px) {
+    /*tv_search*/
+    .search_tv_totalResult{
+		display: block;
+		text-align: left;
+		float: inherit;
+	}
+	.search_tv_relative_content a{
+		width: calc(100% / 2 - 5px);
+	}
+	
+}
+@media(max-width:400px){
+    .search_tv_unit, .search_tv_relative_content a{
+		width: 100%;
+	}
+}

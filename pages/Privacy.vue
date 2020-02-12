@@ -1,0 +1,78 @@
+<template>
+  <div id="wrapper">
+    <div id="page-content-wrapper">
+      <!--banner start-->
+      <div class="page_banner imgLiquidFill imgLiquid">
+        <img :src="`${$root.resUrl}/images/page_banner.jpg`" alt="">
+      </div>
+      <!--banner end-->
+      <div class="page_container">
+        <div class="container">
+          <div class="row">
+            <SubPagesMenu />
+            <!--company_left end-->
+            <div class="company_right col-xs-12 col-sm-9 col-md-9">
+              <div class="company_title">
+                <i class="icon-article" /><span>隐私权政策</span>
+              </div>
+              <div class="company_content">
+                影音平台网站（以下称"本网站"）隐私权保护声明系本网站保护用户个人隐私的承诺。鑑于网络的特性，本网站将无可避免地与您产生直接或间接的互动关係，故特此说明本网站对用户个人信息所採取的收集、使用和保护政策，请您务必仔细阅读：<br><br>
+
+                <div class="privacy_title">
+                  1.使用者非个人化信息
+                </div>
+                我们将通过您的IP地址来收集非个人化的信息，例如您的浏览器性质、操作系统种类、给您提供接入服务的ISP的域名等，以优化在您计算机屏幕上显示的页面。通过收集上述信息，我们亦进行客流量统计，从而改进网站的管理和服务。<br><br>
+
+                <div class="privacy_title">
+                  2.个人资料
+                </div>
+                2.1 当您在搜狐网站进行用户注册登记、参加网上或公共论坛等各种活动时，在您的同意及确认下，本网站将通过注册表格等形式要求您提供一些个人资料。这些个人资料包括：<br>
+                2.1.1 个人识别资料：如姓名、性别、年龄、出生日期、身份证号码（或护照号码）、电话、通信地址、住址、电子邮件地址、等情况。<br>
+                2.1.2 个人背景： 职业、教育程度、收入状况、婚姻、家庭状况。<br>
+                2.2
+                请了解，在未经您同意及确认之前，本网站不会将您为参加本网站之特定活动所提供的资料利用于其它目的。惟按下列第6条规定应政府及法律要求披露时不在此限。<br><br>
+
+                <div class="privacy_title">
+                  3、 信息安全
+                </div>
+                3.1 本网站将对您所提供的资料进行严格的管理及保护，本网站将使用相应的技术，防止您的个人资料丢失、被盗用或遭篡改。<br>
+                3.2
+                本网站得在必要时委讬专业技术人员代为对该类资料进行电脑处理，以符合专业分工时代的需求。如本网站将电脑处理之通知送达予您，而您未在通知规定的时间内主动明示反对，本网站将推定您已同意。
+              </div>
+            </div>
+            <!--company_right end-->
+          </div>
+          <!--page_content_s end-->
+        </div>
+      </div>
+      <!--page_container end-->
+      <Footer />
+      <ScrollTop />
+    </div>
+  </div>
+</template>
+
+<script>
+import SubPagesMenu from '../components/SubPagesMenu'
+export default {
+  name: 'Privacy',
+  components: {
+    SubPagesMenu
+  },
+  metaInfo () {
+    return {
+      link: [{ rel: 'stylesheet', href: `${this.$root.resUrl}/css/member.css` }]
+    }
+  },
+  data () {
+    return {}
+  },
+  mounted () {
+    setTimeout(animationEffect.bind(this), 100)
+  }
+}
+
+function animationEffect () {
+  // $('.imgLiquidFill').imgLiquid()
+}
+</script>

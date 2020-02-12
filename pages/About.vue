@@ -1,0 +1,62 @@
+<template>
+  <div id="wrapper">
+    <div id="page-content-wrapper">
+      <!--banner start-->
+      <div class="page_banner imgLiquidFill imgLiquid">
+        <img :src="`${$root.resUrl}/images/page_banner.jpg`" alt="">
+      </div>
+      <!--banner end-->
+      <div class="page_container">
+        <div class="container">
+          <div class="row">
+            <SubPagesMenu />
+            <!--company_left end-->
+            <div class="company_right col-xs-12 col-sm-9 col-md-9">
+              <div class="company_title">
+                <i class="icon-youtube-logo" /><span>关于我们</span>
+              </div>
+              <div class="company_content">
+                亲鱼实政里轻背去上中年值票界友小出评小一美建去山活初在总法学间果了际说来讲。来决星礼，灵至经成列么司官用分运第要所的各能。<br><br>
+                事上生开开只队定喜有相见出权对、以海家马修界来依大让规，乐念的来古中在能我作学臺来来大新面母国立在故灵在类英下生……登在立创来价中对福说飞是妈具第高在了统商分再元快，动主地之就家。实管一才？主一时好无放无我。<br><br>
+                也孩指环机时一远对我时党时成优考大我就及发我员她义情来状目得技势他国正应多养精时活不作其收已场方过道，他的果朋乡了剧我布。家子香；情处流件质各有表他然臺标只所解湾类海时人景排量她中常交自北了闻高来会写面？题学一高友；让作中快中能父爱响度离语国。升式无克分性。呢间对小究，法来市，生不可式手学，创到也动、吃读理笑子外日一议定体酒查基：温种外一。子母行说、十向亲诗化文，间陆问；政什以回面引司物不相球卖口为了发国个现！<br><br>
+                内中不！一到时一，时车香分国有。座选达认遊的了国理原为议回为组我上定欢；体际年脑的。楼景科？华不见上算今纪中他果人买营电西价会们国臺见岸人会，和查低，脑洋去人班像超功期有却得化生母用服有竟历人但！小人温，其阳国自论小个。育也职一智物静！如生多不个了。是害断品。
+              </div>
+            </div>
+            <!--company_right end-->
+          </div>
+          <!--page_content_s end-->
+        </div>
+      </div>
+      <!--page_container end-->
+      <Footer />
+      <ScrollTop />
+    </div>
+  </div>
+</template>
+
+<script>
+import SubPagesMenu from '../components/SubPagesMenu'
+export default {
+  name: 'About',
+  components: {
+    SubPagesMenu
+  },
+  metaInfo () {
+    return {
+      link: [
+        { rel: 'stylesheet', href: `${this.$root.resUrl}/css/member.css` }
+      ]
+    }
+  },
+  data () {
+    return {}
+  },
+  mounted () {
+    setTimeout(animationEffect.bind(this), 100)
+  }
+}
+
+function animationEffect () {
+  // $('.imgLiquidFill').imgLiquid()
+}
+</script>

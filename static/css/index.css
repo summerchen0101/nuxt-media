@@ -1,0 +1,274 @@
+@charset "UTF-8";
+.banner-box img {
+  width: 100%;
+}
+
+.banner-box .show-mb {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .banner-box .show-pc {
+    display: none;
+  }
+  .banner-box .show-mb {
+    display: block;
+  }
+}
+
+/*index*/
+.index_container {
+  background: #f5f5f5;
+  padding: 60px 0 30px;
+}
+
+.index_contentBox_column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.index_contentBox::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*電視劇*/
+.index_tv_list, .index_movie_list {
+  width: 83%;
+}
+
+@media (max-width: 991px) {
+  .index_tv_list, .index_movie_list {
+    width: 100%;
+  }
+}
+
+.link_list {
+  color: #999999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+
+.link_list li {
+  display: inline-block;
+  color: #999999;
+}
+
+.link_list li::after {
+  content: "/";
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.link_list li:last-child::after {
+  display: none;
+}
+
+.index_more::before {
+  content: url("../images/more_before_line.png");
+  margin: 0 10px 0 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*排行榜*/
+.rank_box {
+  width: 17%;
+}
+
+@media (max-width: 991px) {
+  .rank_box {
+    display: none;
+  }
+}
+
+.rank_mtitle {
+  margin-bottom: 15px;
+}
+
+.rank_content {
+  border: 1px solid #cccccc;
+  background: #fff;
+  height: calc(100% - 68px);
+}
+
+.rank_img {
+  height: 130px;
+}
+
+.rank_list {
+  margin: 5px 15px 15px;
+}
+
+.rank_unit {
+  display: block;
+  border-bottom: 1px dashed #a3a6ab;
+  padding: 7px 0;
+  font-size: 15px;
+  color: #333333;
+}
+
+.rank_unit:hover {
+  color: #ff443f;
+}
+
+.first_unit {
+  font-size: 17px;
+}
+
+.rank_unit i {
+  display: inline-block;
+  font-style: normal;
+  font-size: 17px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  background: #f4c200;
+  color: #fff;
+  line-height: 25px;
+  margin: 0 10px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.rank_unit i.first {
+  width: 41px;
+  height: 32px;
+  background: url(../images/index/rank_first.png) no-repeat;
+  border-radius: inherit;
+  line-height: 36px;
+  font-size: 15px;
+  margin-left: 0;
+}
+
+.rank_unit i.second {
+  background: #4faded;
+}
+
+.rank_unit i.third {
+  background: #a8ca04;
+}
+
+.rank_unit span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  width: calc(100% - 52px);
+  vertical-align: middle;
+}
+
+/*綜藝*/
+.index_variety_list_big {
+  width: 35%;
+}
+
+.index_variety_list_big .index_variety_unit {
+  width: 100%;
+  margin-bottom: 0;
+  margin-left: 0;
+  height: calc(100% - 20px);
+}
+
+.index_variety_list_big .index_variety_img {
+  height: 354px;
+}
+
+@media (max-width: 767px) {
+  .index_variety_list_big {
+    display: none;
+  }
+}
+
+.index_variety_list {
+  width: 65%;
+  padding-left: 20px;
+}
+
+.index_variety_list .index_variety_unit {
+  width: calc(100% / 4 - 12px);
+}
+
+.index_variety_list .index_variety_unit:nth-child(4n+4) {
+  margin-right: 0;
+}
+
+.index_variety_list .index_variety_unit:last-child {
+  display: none;
+}
+
+.index_variety_list .index_variety_img {
+  height: 141px;
+}
+
+@media (max-width: 767px) {
+  .index_variety_list {
+    padding-left: 0;
+    width: 100%;
+  }
+  .index_variety_list .index_variety_img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 575px) {
+  .index_variety_list .index_variety_unit {
+    width: calc(100% / 3 - 11px);
+  }
+  .index_variety_list .index_variety_unit:nth-child(3n+3) {
+    margin-right: 0;
+  }
+  .index_variety_list .index_variety_unit:nth-child(4n+4) {
+    margin-right: 15px;
+  }
+  .index_variety_list .index_variety_unit:last-child {
+    display: block;
+  }
+  .index_variety_list .index_variety_img {
+    height: 130px;
+  }
+}
+
+@media (max-width: 400px) {
+  .index_variety_list .index_variety_unit {
+    width: calc(100% / 2 - 8px);
+  }
+  .index_variety_list .index_variety_unit:nth-child(2n+2) {
+    margin-right: 0;
+  }
+  .index_variety_list .index_variety_unit:nth-child(3n+3) {
+    margin-right: 15px;
+  }
+  .index_variety_list .index_variety_unit:nth-child(6n+6) {
+    margin-right: 0;
+  }
+  .index_variety_list .index_variety_unit:last-child {
+    display: none;
+  }
+  .index_variety_list .index_variety_img {
+    height: 130px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .index_container {
+    padding: 35px 0;
+  }
+  .link_list {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .index_fixedSlide a {
+    padding: 5px;
+    font-size: 12px;
+  }
+}

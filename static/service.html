@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-Han">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抖影电影 DOING MOVIE</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- myfonts CSS -->
+    <link href="fonts/webfonts/style.css" rel="stylesheet">
+    <!--  Add the new slick-theme.css if you want the default styling-->
+    <link rel="stylesheet" type="text/css" href="plugins/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="plugins/slick/slick-theme.css"/>
+    <!-- Plugins -->
+    <link rel="stylesheet" href="plugins/fancyBox/jquery.fancybox.css">
+    <!-- mystyles CSS -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/member.css">
+
+
+</head>
+
+<body>
+    <div class="menuBg"></div>
+    <!--header start-->
+     <header class="header_box">
+        <div class="container">
+            <div class="navbar-hamburger"> <span></span> <span></span> <span></span></div>
+            <a class="logo" href="index.html"><img src="images/logo.png" alt=""></a>
+            <nav class="menuBar">
+                <div class="nav-content">
+                    <ul class="menu_list">
+                        <li><a href="tv_korea_list.html"><span><i class="icon-television"></i></span><span>戏剧</span></a></li>
+                        <li><a href="tv_korea_list.html"><span><i class="icon-movie-symbol-of-video-camera"></i></span><span>电影</span></a></li>
+                        <li><a href="tv_korea_list.html"><span><i class="icon-cartoons-character-with-big-eyes"></i></span><span>动漫</span></a></li>
+                        <li><a href="tv_korea_list.html"><span><i class="icon-karaoke-microphone-icon"></i></span><span>综艺</span></a></li>
+                        <li>
+                            <a>
+                                <span><i class="icon-18"></i></span><span>成人</span>
+                            </a>
+                            <span class="arr"><i class="fa fa-caret-down"></i></span>
+                            <ul class="submenu_list">
+                                <li><a href="tv_korea_list.html">长片</a></li>
+                                <li><a href="tv_korea_list.html">短片</a></li>
+                                <li><a href="tv_korea_list.html">自拍</a></li>
+                                <li><a href="tv_korea_list.html">写真</a></li>
+                                <li><a href="tv_korea_list.html">漫画</a></li>
+                                <li><a href="tv_korea_list.html">文学</a></li>
+                                <li><a href="tv_korea_list.html">说书</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="ranking.html"><span><i class="icon-ranking"></i></span><span>排行</span></a></li>
+                        <li><a data-toggle="modal" data-target="#searchModal"><span><i class="fa fa-search"></i></span><span>搜寻</span></a></li>
+                        <li><a class="login" id="loginBtn" href="#login_dialog"><span><i class="icon-user"></i></span><span>登入</span></a></li>
+                    </ul><a ></a>
+                </div>
+                
+            </nav>
+            <!--nav end-->
+        </div>
+    </header>
+    <div class="hidden">
+        <div class="modall" id="login_dialog">
+            <div id="login_dialog_inner">
+                <div class="login_dialog_title">
+                    <span><img src="images/login_dialog.png" alt=""></span>
+                    <span>会员登入</span>
+                </div>
+                <form class="form-horizontal login_dialog_form">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="text" class="form-control" placeholder="帐号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="password" class="form-control" placeholder="密码">
+                        </div>
+                    </div>
+                    <div class="login_link login_link_forget">
+                        <!-- <a id="go_forgetPw">忘记密码</a> -->
+                    </div>
+                    <div class="form-group">
+                        <div class="dialog_form_btn">
+                            <a href="setting.html" class="btn btn-primary">登入</a>
+                        </div>
+                    </div>
+                    <div class="login_link login_link_account">
+                        没有帐号?
+                        <a id="go_reg">创建一个新帐号</a>
+                    </div>
+                </form>
+            </div><!--login_dialog_inner end-->
+            <div id="registered_dialog_inner">
+                <div class="login_dialog_title">
+                    <span><img src="images/login_dialog.png" alt=""></span>
+                    <span>会员注册</span>
+                </div>
+                <form class="form-horizontal login_dialog_form">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="text" class="form-control" placeholder="帐号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="password" class="form-control" placeholder="密码(6-16位字母、数字和符号)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="password" class="form-control" placeholder="确认密码">
+                        </div>
+                    </div>
+                    <div class="registered_dialog_txt">
+                        点击创建帐户，即表示同意相关
+                        <a href="privacy.html">服务条款</a>
+                    </div>
+                    <div class="form-group">
+                        <div class="dialog_form_btn">
+                            <button type="submit" class="btn btn-primary">注册</button>
+                        </div>
+                    </div>
+                    <div class="login_link login_link_account">
+                        已有帐号?
+                        <a id="go_log">立即登入</a>
+                    </div>
+                </form>
+            </div><!--registered_dialog_inner end-->
+            <div id="forget_pw_dialog_inner">
+                <div class="login_dialog_title">
+                    <span><img src="images/login_dialog.png" alt=""></span>
+                    <span>忘记密码</span>
+                </div>
+                 <form class="form-horizontal login_dialog_form">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="password" class="form-control" placeholder="新密码(6-16位字母、数字和符号)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="password" class="form-control" placeholder="密码确认">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="dialog_form_btn">
+                            <button type="submit" class="btn btn-primary">修改密码</button>
+                        </div>
+                    </div>
+                </form>
+            </div> <!--forget_pw_dialog_inner end-->
+        </div>
+    </div><!--login_dialog end-->
+    <div class="modal fade searchModal" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">搜寻</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <input type="text" class="form-control" aria-describedby="basic-addon2">
+                    <a href="search_list.html" class="input-group-addon" id="basic-addon2">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </div>
+                <div class="searchModal_head">
+                    热门搜寻：
+                </div>
+                <div class="searchModal_body">
+                    <a class="" href="">
+                        <div class="searchModal_num first">1</div>
+                        <div class="searchModal_name">雪暴</div>
+                    </a>
+                    <a class="" href="">
+                        <div class="searchModal_num second">2</div>
+                        <div class="searchModal_name">俗女养成记</div>
+                    </a>
+                    <a class="" href="">
+                        <div class="searchModal_num third">3</div>
+                        <div class="searchModal_name">G杀事件</div>
+                    </a>
+                    <a class="" href="">
+                        <div class="searchModal_num">4</div>
+                        <div class="searchModal_name">大唐荣耀</div>
+                    </a>
+                    <a class="" href="">
+                        <div class="searchModal_num">5</div>
+                        <div class="searchModal_name">秘密精品店</div>
+                    </a>
+                    <a class="" href="">
+                        <div class="searchModal_num">6</div>
+                        <div class="searchModal_name">萌兽宠物店</div>
+                    </a>
+                    <a class="" href="">
+                        <div class="searchModal_num">7</div>
+                        <div class="searchModal_name">秘密精品店</div>
+                    </a>
+                    <a class="" href="">
+                        <div class="searchModal_num">8</div>
+                        <div class="searchModal_name">萌兽宠物店</div>
+                    </a>
+                    <a class="" href="">
+                        <div class="searchModal_num">9</div>
+                        <div class="searchModal_name">秘密精品店</div>
+                    </a>
+                    <a class="" href="">
+                        <div class="searchModal_num">10</div>
+                        <div class="searchModal_name">秘密精品店</div>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+<div id="wrapper">
+    <!-- /#sidebar-wrapper -->
+    <div id="page-content-wrapper">
+        <!--banner start-->
+        <div class="page_banner imgLiquidFill imgLiquid">
+            <img src="images/page_banner.jpg" alt="">
+        </div>
+        <!--banner end-->
+        <div class="page_container">
+            <div class="container">
+                <div class="row">
+                    <div class="company_left col-xs-12 col-sm-3 col-md-3">
+                        <div class="company_left_pc">
+                            <a href="about.html"><i class="fa fa-chevron-right"></i>关于我们</a>
+                            <a href="qa.html"><i class="fa fa-chevron-right"></i>常见问题</a>
+                            <a href="privacy.html"><i class="fa fa-chevron-right"></i>隐私权政策</a>
+                            <a href="service.html" class="select"><i class="fa fa-chevron-right"></i>服务介绍</a>
+                        </div>
+                        <select name="here" onchange="location.href=this.options[this.selectedIndex].value;" class="company_left_mb">
+                            <option value="">请选择</option>
+                            <option value="about.html">关于我们</option>
+                            <option value="qa.html">常见问题</option>
+                            <option value="privacy.html">隐私权政策</option>
+                            <option value="service.html">服务介绍</option>
+                        </select>
+                    </div>
+                    <!--company_left end-->
+                    <div class="company_right col-xs-12 col-sm-9 col-md-9">
+                        <div class="company_title"><i class="icon-customer-support"></i><span>服务介绍</span></div>
+                        <div class="company_content">
+                            开空热古？质人画照列县……展业是百意……进湾全听、有足识李生不厂更家。建能有党程军苦里大福地尔，神世白。五叫丽投做来痛本了状老们育巴深妈记叶我长才的条海念其风趣斯全员和进。<br/><br/>
+    
+                            国行怎票，张当样重口考儿市不发造小候年且公活水飞告了，她因在亮厂。<br/><br/>
+    
+                            友的有问的电局，评三文；人信要年资事助，令自共！施常儿看如不根本想有素科于女春，要特利！只参如下新外乐；服纪了要面空不不，一视产远张以细人天校，感模生间，股的你愿，大了乐取子，生什的究原不；方最心上：外点知黄把小温，将展了进负人读活叫去，太现一臺每留：知里任的也时分怀厂，已惊的可子了是。示一艺画、学面呢至以再……流生此些官压。书不光球机样票点保夜欢起天施？生答等开剧本间达？然一年士大、人西海能自何已人妈面能有厂写共里静国！下口名我她国最实极，在高罗鱼回分是动法银公次学？中感李那生而巴边色连人的孩日子可车事地要中视李难不广司而把脑是。德此无美……美构量模火对子音前，元来生以真的东近名改须他一到什老南。请亲所利回客要角一个饭表销夫谈。刻进？<br/><br/>
+    
+                            快爸过学例会过信平路此时的事平业我华水经营有我争什、这张相怎给景物一约别生研可！不现一美，和活回开雄……长许拿走算车兴阿点足后；水去加现的！告令案天地出能带资你现；不系趣在的许日老要？我统去，这子前这商我儿意阳片的；星站闻力才出知定续臺第里程製一规种给式河千利的始？可国以坐子新销，面支从真臺二上张年说性他外那居始。业车立情分交员一级轻不文最特；我益举还突高？死拉来……的儿多我可种去车表在特比；大在理我期是市界生的；里闻。
+                        </div>
+                    </div> <!--company_right end-->
+                </div><!--page_content_s end-->
+            </div>
+        </div> <!--page_container end-->
+        <footer class="footer_box">
+            <div class="container">
+                <div class="footer_link">
+                    <a href="about.html">关于我们</a>|
+                    <a href="qa.html">常见问题</a>|
+                    
+                    <a href="privacy.html">隐私权政策</a>|
+                    <a href="service.html">服务介绍</a>
+                </div>
+                <div class="copyright">Copyright © 2019 All rights reserved</div>
+            </div>
+        </footer>
+        <div class="page_fixedSlide">
+            <a class="scrollTop"><i class="fa fa-caret-up" ></i>TOP</a>
+        </div>
+    </div>
+</div>
+<!-- /#wrapper -->
+
+
+
+
+
+
+
+
+<!-- Jquery and Bootstap core js files -->
+<script type="text/javascript" src="plugins/jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Modernizr javascript -->
+<script type="text/javascript" src="plugins/modernizr.js"></script>
+
+<!-- imgLiquid javascript -->
+<script type="text/javascript" src="plugins/imgLiquid-min.js"></script>
+
+<!--fancybox javascript-->
+<script type="text/javascript" src="plugins/fancyBox/jquery.fancybox.pack.js"></script>
+
+<!-- slick javascript -->
+<script type="text/javascript" src="plugins/slick/slick.js"></script>
+
+<!-- Initialization of Plugins -->
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

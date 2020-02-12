@@ -1,20 +1,42 @@
 
+let webpack = require('webpack');
 module.exports = {
+  // router: {
+  //   base: '/app'
+  // },
   mode: 'universal',
   loading: '~/components/Loading.vue',
   /*
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
-    ],
+    title: "抖影电影 DOING MOVIE",
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {rel: "icon", type: "image/x-icon", href: "/images/favicon.png"},
+      {rel: "stylesheet", href: "/bootstrap/css/bootstrap.css"},
+      {rel: "stylesheet", href: "/fonts/font-awesome/css/font-awesome.css"},
+      {rel: "stylesheet", href: "/fonts/webfonts/style.css"},
+      {rel: "stylesheet", href: "/plugins/slick/slick.css"},
+      {rel: "stylesheet", href: "/plugins/slick/slick-theme.css"},
+      {rel: "stylesheet", href: "/plugins/fancyBox/jquery.fancybox.css"},
+      {rel: "stylesheet", href: "/css/style.css"},
+      {rel: "stylesheet", href: "/css/media.css"},
+    ],
+    script: [
+      { type: 'text/javascript', src: '/plugins/jquery.min.js' },
+      { type: 'text/javascript', src: '/bootstrap/js/bootstrap.min.js' },
+      { type: 'text/javascript', src: '/plugins/modernizr.js' },
+      { type: 'text/javascript', src: '/plugins/imgLiquid-min.js' },
+      { type: 'text/javascript', src: '/plugins/fancyBox/jquery.fancybox.pack.js' },
+      // { type: 'text/javascript', src: '/plugins/slick/slick.js' },
+      // { type: 'text/javascript', src: '/js/script.js', defer: true }
     ]
+    // changed (newInfo, addedTags, removedTags) {
+    //   console.log('Metadata was updated!')
+    // },
+    // afterNavigation(metaInfo) {
+    //   console.log("afterNavigation")
+    // }
   },
   /*
   ** Customize the progress-bar color
@@ -30,7 +52,9 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '@/plugins/mixins',
+    '@/plugins/jquery',
   ],
   /*
   ** Nuxt.js dev-modules
@@ -57,6 +81,13 @@ module.exports = {
   */
   build: {
     transpile: [/^element-ui/],
+
+    // vendor: ["jquery"],
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: "jquery"
+      })
+    ],
     /*
     ** You can extend webpack config here
     */

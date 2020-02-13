@@ -12,16 +12,16 @@
       </div>
     </div>
     <div class="member_list_pc">
-      <NuxtLink :to="{name: 'Record'}">
+      <NuxtLink :to="{name: 'member-record'}">
         <i class="fa fa-history" />观看纪录
       </NuxtLink>
-      <NuxtLink :to="{name: 'Favorite'}">
+      <NuxtLink :to="{name: 'member-favorite'}">
         <i class="fa fa-heart-o" />我的收藏
       </NuxtLink>
-      <NuxtLink :to="{name: 'Message'}">
+      <NuxtLink :to="{name: 'member-message'}">
         <i class="icon-commenting" />我的消息
       </NuxtLink>
-      <NuxtLink :to="{name: 'Profile'}">
+      <NuxtLink :to="{name: 'member-profile'}">
         <i class="fa fa-cog" />帐号设置
       </NuxtLink>
     </div>
@@ -49,9 +49,6 @@
 export default {
   name: 'MemberSideMenu',
   components: {},
-  props: {
-    selected: String
-  },
   mounted () {
     console.log(this.$route)
   }

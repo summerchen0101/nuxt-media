@@ -10,9 +10,7 @@
     "start": "cross-env NODE_ENV=production node server/index.js",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "res": "node build/resource.js",
-    "env": "heroku config:get API_BASE_URL -s  >> .env",
-    "deploy": "yarn env && yarn install && yarn build && yarn start"
+    "res": "node build/resource.js"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.9.5",

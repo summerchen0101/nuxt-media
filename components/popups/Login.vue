@@ -39,7 +39,7 @@ export default {
   methods: {
     onClickedLogin () {
       this.$.fancybox.close()
-      this.$router.push({ name: 'Profile' })
+      this.$router.push({ name: 'member-profile' })
     }
   }
 }

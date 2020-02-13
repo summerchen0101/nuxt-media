@@ -10,37 +10,27 @@
           aria-haspopup="true"
           aria-expanded="true"
         >
-          全部
+          全部讯息
           <span class="caret" />
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="#">全部</a></li>
-          <li><a href="#">电影</a></li>
-          <li><a href="#">电视剧</a></li>
-          <li><a href="#">动漫</a></li>
-          <li><a href="#">其他</a></li>
+          <li><a href="#">全部讯息</a></li>
+          <li><a href="#">系统消息</a></li>
         </ul>
       </div>
-      <!--member_select end-->
-      <a href="#" class="member_clearBtn"><i class="fa fa-trash-o" />清除所有收藏</a>
     </div>
-    <!--member_head end-->
-    <div class="member_video_list">
-      <div v-for="i in 10" :key="i" class="member_video_unit">
-        <a href="" class="member_delete"><i class="fa fa-times" /></a>
-        <div class="member_video_img imgLiquidFill imgLiquid">
-          <img src="/images/member/collect_img1.jpg" alt="">
-          <div class="member_video_time">
-            05:56
-          </div>
+    <div class="news_list">
+      <div v-for="i in 6" :key="i" class="news_unit">
+        <div class="news_top">
+          <span class="news_sort"><i class="icon-black-envelope" />系统消息</span>
+          <span class="news_date">2017-03-01</span>
         </div>
-        <a href="tv_korea_detail.html" class="member_video_txt">
-          <div class="member_video_title">李钟硕《W 两个世界》韩剧电视剧海报拍摄</div>
-          <div class="member_video_view"><i class="fa fa-play" />已看到00分05秒</div>
-        </a>
+        <nuxt-link :to="{name: 'member-message-detail'}" class="news_txt">
+          见元戏这得节建时随的。会找错客着学人满应有防，试天张，的话玩运定更议故预陆是间得却了们有，受家来的资年的成长时高便病向领，财我的育；规配和下体。宝大世大、件或算生留有...
+        </nuxt-link>
       </div>
     </div>
-    <!--member_video_list end-->
+    <!--news_list end-->
     <div class="page_list">
       <a href="">上一页</a>
       <a href="">1</a>
@@ -59,7 +49,7 @@
 
 <script>
 export default {
-  name: 'Favorite',
+  name: 'MessageIndex',
   components: {
   },
   data () {

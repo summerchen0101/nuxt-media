@@ -1,7 +1,9 @@
 <template>
-  <div v-if="loading" class="loading-page">
-    <p>Loading...</p>
-  </div>
+  <transition name="fade">
+    <div v-if="loading" class="loading-page">
+      <p>Loading...</p>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -27,7 +29,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, .8);
   text-align: center;
   padding-top: 200px;
   font-size: 30px;

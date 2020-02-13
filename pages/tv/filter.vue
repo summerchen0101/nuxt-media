@@ -1,5 +1,5 @@
 <template>
-  <Dashboard id="wrapper">
+  <div id="wrapper">
     <!-- /#sidebar-wrapper -->
     <div class="page_container">
       <div class="container tv_sub_container row">
@@ -152,12 +152,13 @@
     <!--page_container end-->
     <Footer />
     <ScrollTop />
-  </Dashboard>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'FilterPage',
+  layout: 'main',
   components: {},
   data () {
     return {}

@@ -1,5 +1,5 @@
 <template>
-  <Dashboard id="wrapper">
+  <div id="wrapper">
     <!-- /#sidebar-wrapper -->
     <div id="page-content-wrapper">
       <!--banner start-->
@@ -117,12 +117,13 @@
         </div>
       </div>
     </div>
-  </Dashboard>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'SearchResult',
+  layout: 'main',
   components: {},
   data () {
     return {}

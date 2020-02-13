@@ -1,5 +1,5 @@
 <template>
-  <Dashboard id="wrapper">
+  <div id="wrapper">
     <div id="page-content-wrapper">
       <!--banner start-->
       <div class="page_banner imgLiquidFill imgLiquid">
@@ -104,12 +104,13 @@
       <Footer />
       <ScrollTop />
     </div>
-  </Dashboard>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'Rank',
+  layout: 'main',
   components: {},
   data () {
     return {}

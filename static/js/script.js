@@ -85,15 +85,11 @@ $(function () {
   })
 })
 
-$(document).ready(function(){
-
-  $('.banner-box').slick({
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-  });
-})
-
+$('.banner-box').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+});
 /* tv_list */
 $('.tv_list, .index_cartoons_list, .index_smovie_list').slick({
   infinite: true,

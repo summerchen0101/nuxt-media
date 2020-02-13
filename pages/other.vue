@@ -1,5 +1,5 @@
 <template>
-  <Dashboard id="wrapper">
+  <div id="wrapper">
     <div id="page-content-wrapper">
       <!--banner start-->
       <div class="page_banner imgLiquidFill imgLiquid">
@@ -21,13 +21,14 @@
       <Footer />
       <ScrollTop />
     </div>
-  </Dashboard>
+  </div>
 </template>
 
 <script>
 import SubPagesMenu from '../components/SubPagesMenu'
 export default {
   name: 'Other',
+  layout: 'main',
   components: {
     SubPagesMenu
   },

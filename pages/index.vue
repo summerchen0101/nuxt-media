@@ -1,6 +1,6 @@
 <template>
-  <Dashboard>
-    <div ref="banner" class="banner-box">
+  <div>
+    <div v-if="showCarousel" class="banner-box">
       <div class="item">
         <img src="images/index/pc-banner1.jpg" class="show-pc">
         <img src="images/index/mb-banner1.jpg" alt="" class="show-mb">
@@ -271,19 +271,27 @@
     <!--index_container end-->
     <Footer />
     <IndexScrollTop />
-  </Dashboard>
+  </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 export default {
   name: 'Index',
+  layout: 'main',
   async asyncData ({ store, app, params }) {
     await store.dispatch('tv/getList', { time: '2020-02-04' })
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('hi')
+      }, 3000)
+    })
     return {}
   },
   data () {
-    return {}
+    return {
+      showCarousel: false
+    }
   },
   computed: {
     ...mapGetters({
@@ -293,12 +301,16 @@ export default {
   created () {
   },
   mounted () {
-    console.log('mounted')
-    this.$mixin.loadScript('/plugins/slick/slick.js')
-    setTimeout(() => this.$mixin.loadScript('/js/script.js'), 100)
+    setTimeout(() => {
+      this.$mixin.loadScript('/js/script.js')
+      this.showCarousel = true
+    }, 200)
   },
   head () {
     return {
+      script: [
+        { type: 'text/javascript', src: '/plugins/slick/slick.js' }
+      ],
       link: [
         { rel: 'stylesheet', href: '/css/index.css' }
       ]

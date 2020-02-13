@@ -1,5 +1,5 @@
 <template>
-  <Dashboard id="wrapper">
+  <div id="wrapper">
     <div id="page-content-wrapper">
       <div class="video_player_info_path">
         <div class="container">
@@ -391,12 +391,13 @@
       <Footer />
     </div>
     <ScrollTop />
-  </Dashboard>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'VideoDetail',
+  layout: 'main',
   components: {},
   data () {
     return {}

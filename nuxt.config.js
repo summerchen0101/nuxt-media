@@ -6,7 +6,6 @@ module.exports = {
     linkActiveClass: 'select'
   },
   mode: 'universal',
-  loading: '~/components/Loading.vue',
   /*
   ** Headers of the page
   */
@@ -42,11 +41,13 @@ module.exports = {
   ** Customize the progress-bar color
   */
   // loading: { color: '#666' },
+  loading: '~/components/Loading.vue',
   /*
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    './assets/transition.scss',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -71,7 +72,7 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
   /*
   ** Axios module configuration

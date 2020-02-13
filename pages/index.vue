@@ -22,7 +22,7 @@
           <!--head_title end-->
           <div class="index_contentBox index_contentBox_column">
             <div class="index_tv_list">
-              <NuxtLink v-for="i in 10" :key="i" :to="{name: 'VideoDetail'}" class="index_tv_unit video_unit">
+              <nuxt-link v-for="i in 10" :key="i" :to="{name: 'tv-video-detail'}" class="index_tv_unit video_unit">
                 <div class="index_tv_img index_unit_img imgLiquidFill imgLiquid">
                   <img src="/images/index/tv_img1.jpg" alt="">
                 </div>
@@ -34,7 +34,7 @@
                     更新至6集
                   </div>
                 </div>
-              </NuxtLink>
+              </nuxt-link>
             </div>
             <!--index_tv_list end-->
             <div class="rank_box">
@@ -280,12 +280,7 @@ export default {
   name: 'Index',
   async asyncData ({ store, app, params }) {
     await store.dispatch('tv/getList', { time: '2020-02-04' })
-    const result = await new Promise((resolve) => {
-      setTimeout(function () {
-        resolve({ name: 'world' })
-      }, 2000)
-    })
-    return result
+    return {}
   },
   data () {
     return {}

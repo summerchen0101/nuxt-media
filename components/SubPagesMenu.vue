@@ -1,18 +1,18 @@
 <template>
   <div class="company_left col-xs-12 col-sm-3 col-md-3">
     <div class="company_left_pc">
-      <NuxtLink :to="{name: 'About'}">
+      <nuxt-link :to="{name: 'other-about'}">
         <i class="fa fa-chevron-right" />关于我们
-      </NuxtLink>
-      <NuxtLink :to="{name: 'FAQ'}">
+      </nuxt-link>
+      <nuxt-link :to="{name: 'other-faq'}">
         <i class="fa fa-chevron-right" />常见问题
-      </NuxtLink>
-      <NuxtLink :to="{name: 'Privacy'}">
+      </nuxt-link>
+      <nuxt-link :to="{name: 'other-privacy'}">
         <i class="fa fa-chevron-right" />隐私权政策
-      </NuxtLink>
-      <NuxtLink :to="{name: 'Service'}">
+      </nuxt-link>
+      <nuxt-link :to="{name: 'other-service'}">
         <i class="fa fa-chevron-right" />服务介绍
-      </NuxtLink>
+      </nuxt-link>
     </div>
     <select name="here" onchange="location.href=this.options[this.selectedIndex].value;" class="company_left_mb">
       <option value="">

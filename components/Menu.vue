@@ -1,11 +1,11 @@
 <template>
   <div class="links">
-    <NuxtLink :to="'/'">
+    <nuxt-link :to="'/'">
       首頁
-    </NuxtLink>
-    <NuxtLink :to="{name: 'tvs'}">
+    </nuxt-link>
+    <nuxt-link :to="{name: 'tvs'}">
       TV列表
-    </NuxtLink>
+    </nuxt-link>
   </div>
 </template>
 <script>

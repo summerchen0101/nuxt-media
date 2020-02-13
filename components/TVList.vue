@@ -2,9 +2,9 @@
   <div>
     <ul>
       <li v-for="(item, i) in tvs" :key="i">
-        <NuxtLink :to="{name: 'tvs-id', params: {id: item.id}}">
+        <nuxt-link :to="{name: 'tvs-id', params: {id: item.id}}">
           {{ item.name }}
-        </NuxtLink>
+        </nuxt-link>
       </li>
     </ul>
     <p>筆數：{{ tvs.length }}</p>

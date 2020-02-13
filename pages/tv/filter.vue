@@ -116,7 +116,7 @@
             <a href="">最新发佈</a>
           </div>
           <div class="tv_sub_list">
-            <NuxtLink v-for="i in 20" :key="i" :to="{name: 'VideoDetail'}" class="index_tv_unit video_unit">
+            <nuxt-link v-for="i in 20" :key="i" :to="{name: 'tv-video-detail'}" class="index_tv_unit video_unit">
               <div class="index_tv_img index_unit_img imgLiquidFill imgLiquid">
                 <img src="/images/index/tv_img1.jpg" alt="">
               </div>
@@ -128,7 +128,7 @@
                   更新至6集
                 </div>
               </div>
-            </NuxtLink>
+            </nuxt-link>
           </div>
           <div class="ad-box mb-20">
             <a href="" target="_blank"><img src="/images/ad-img-l.png" alt=""></a>

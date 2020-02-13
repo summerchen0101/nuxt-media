@@ -4,31 +4,31 @@
       <div class="navbar-hamburger">
         <span /> <span /> <span />
       </div>
-      <NuxtLink class="logo" :to="{name: 'index'}">
+      <nuxt-link class="logo" :to="{name: 'index'}">
         <img src="/images/logo.png" alt="">
-      </NuxtLink>
+      </nuxt-link>
       <nav class="menuBar">
         <div class="nav-content">
           <ul class="menu_list">
             <li>
-              <NuxtLink :to="{name: 'Filter'}">
+              <nuxt-link :to="{name: 'tv-filter'}">
                 <span><i class="icon-television" /></span><span>戏剧</span>
-              </NuxtLink>
+              </nuxt-link>
             </li>
             <li>
-              <NuxtLink :to="{name: 'Filter'}">
+              <nuxt-link :to="{name: 'tv-filter'}">
                 <span><i class="icon-movie-symbol-of-video-camera" /></span><span>电影</span>
-              </NuxtLink>
+              </nuxt-link>
             </li>
             <li>
-              <NuxtLink :to="{name: 'Filter'}">
+              <nuxt-link :to="{name: 'tv-filter'}">
                 <span><i class="icon-cartoons-character-with-big-eyes" /></span><span>动漫</span>
-              </NuxtLink>
+              </nuxt-link>
             </li>
             <li>
-              <NuxtLink :to="{name: 'Filter'}">
+              <nuxt-link :to="{name: 'tv-filter'}">
                 <span><i class="icon-karaoke-microphone-icon" /></span><span>综艺</span>
-              </NuxtLink>
+              </nuxt-link>
             </li>
             <li>
               <a>
@@ -37,46 +37,46 @@
               <span class="arr"><i class="fa fa-caret-down" /></span>
               <ul class="submenu_list">
                 <li>
-                  <NuxtLink :to="{name: 'Filter'}">
+                  <nuxt-link :to="{name: 'tv-filter'}">
                     长片
-                  </NuxtLink>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <NuxtLink :to="{name: 'Filter'}">
+                  <nuxt-link :to="{name: 'tv-filter'}">
                     短片
-                  </NuxtLink>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <NuxtLink :to="{name: 'Filter'}">
+                  <nuxt-link :to="{name: 'tv-filter'}">
                     自拍
-                  </NuxtLink>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <NuxtLink :to="{name: 'Filter'}">
+                  <nuxt-link :to="{name: 'tv-filter'}">
                     写真
-                  </NuxtLink>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <NuxtLink :to="{name: 'Filter'}">
+                  <nuxt-link :to="{name: 'tv-filter'}">
                     漫画
-                  </NuxtLink>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <NuxtLink :to="{name: 'Filter'}">
+                  <nuxt-link :to="{name: 'tv-filter'}">
                     文学
-                  </NuxtLink>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <NuxtLink :to="{name: 'Filter'}">
+                  <nuxt-link :to="{name: 'tv-filter'}">
                     说书
-                  </NuxtLink>
+                  </nuxt-link>
                 </li>
               </ul>
             </li>
             <li>
-              <NuxtLink :to="{name: 'Rank'}">
+              <nuxt-link :to="{name: 'tv-rank'}">
                 <span><i class="icon-ranking" /></span><span>排行</span>
-              </NuxtLink>
+              </nuxt-link>
             </li>
             <li>
               <a data-toggle="modal" data-target="#searchModal"><span><i class="fa fa-search" /></span><span>搜寻</span></a>

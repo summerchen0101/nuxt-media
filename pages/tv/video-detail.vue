@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <Dashboard id="wrapper">
     <div id="page-content-wrapper">
       <div class="video_player_info_path">
         <div class="container">
@@ -391,29 +391,26 @@
       <Footer />
     </div>
     <ScrollTop />
-  </div>
+  </Dashboard>
 </template>
 
 <script>
 export default {
   name: 'VideoDetail',
   components: {},
-  metaInfo () {
-    return {
-      link: [
-        { rel: 'stylesheet', href: `${this.$root.resUrl}/css/video_detail.css` }
-      ]
-    }
-  },
   data () {
     return {}
   },
   mounted () {
-    setTimeout(animationEffect.bind(this), 300)
+    this.$mixin.loadScript('/js/script.js')
+  },
+  head () {
+    return {
+      link: [
+        { rel: 'stylesheet', href: '/css/video_detail.css' }
+      ]
+    }
   }
 }
 
-function animationEffect () {
-  // $('.imgLiquidFill').imgLiquid()
-}
 </script>

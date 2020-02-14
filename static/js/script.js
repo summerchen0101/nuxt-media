@@ -69,12 +69,12 @@ $(function () {
   })
 })
 /* scrollTop */
-$(function () {
-  $('.scrollTop').click(function () {
-    $('html,body').animate({ scrollTop: 0 }, 'slow')
-    return false
-  })
-})
+// $(function () {
+//   $('.scrollTop').click(function () {
+//     $('html,body').animate({ scrollTop: 0 }, 'slow')
+//     return false
+//   })
+// })
 $(function () {
   $('.fixed_list li a[href^=#]:not([href=#])').click(function () {
     const target = $(this.hash)

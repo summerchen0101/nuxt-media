@@ -291,19 +291,7 @@
               </div>
             </div>
             <!--tv_detail_comment end-->
-            <div class="page_list">
-              <a href=""><i class="fa fa-angle-left" aria-hidden="true" /></a>
-              <a href="">1</a>
-              <a href="">2</a>
-              <a href="" class="select">3</a>
-              <a href="">4</a>
-              <a href="">5</a>
-              <a href="">6</a>
-              <a href="">7</a>
-              <a href="">...</a>
-              <a href="">20</a>
-              <a href=""><i class="fa fa-angle-right" aria-hidden="true" /></a>
-            </div>
+            <Paginator />
             <!--page_list end-->
           </div>
           <div class="tv_detail_right col-xs-12 col-sm-4 col-md-3">

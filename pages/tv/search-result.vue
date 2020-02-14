@@ -81,40 +81,13 @@
               </div>
             </div>
             <!--search_tv_relative end-->
-            <div class="page_list">
-              <a href="">上一页</a>
-              <a href="">1</a>
-              <a href="">2</a>
-              <a href="" class="select">3</a>
-              <a href="">4</a>
-              <a href="">5</a>
-              <a href="">6</a>
-              <a href="">7</a>
-              <a href="">8</a>
-              <a href="">9</a>
-              <a href="">下一页</a>
-            </div>
+            <Paginator />
           </div>
           <!--page_content_s end-->
         </div>
         <!--page_container end-->
-        <footer class="footer_box">
-          <div class="container">
-            <div class="footer_link">
-              <a href="about.html">关于我们</a>|
-              <a href="qa.html">常见问题</a>|
-
-              <a href="privacy.html">隐私权政策</a>|
-              <a href="service.html">服务介绍</a>
-            </div>
-            <div class="copyright">
-              Copyright © 2019 All rights reserved
-            </div>
-          </div>
-        </footer>
-        <div class="page_fixedSlide">
-          <a class="scrollTop"><i class="fa fa-caret-up" />TOP</a>
-        </div>
+        <Footer />
+        <ScrollTop />
       </div>
     </div>
   </div>

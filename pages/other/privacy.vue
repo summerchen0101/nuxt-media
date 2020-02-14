@@ -37,7 +37,6 @@ export default {
     return {}
   },
   mounted () {
-    this.$mixin.loadScript('/js/script.js')
   },
   head () {
     return {

@@ -137,7 +137,31 @@ export default {
     return {}
   },
   mounted () {
-    this.$mixin.loadScript('/js/script.js')
+    jqFix()
+  },
+  head () {
+    return {}
   }
+}
+
+function jqFix () {
+  /* imgLiquid */
+  $('.imgLiquidFill').imgLiquid()
+
+  /* tab accordion */
+  $('.tab_content').hide()
+  $('.tab_content:first').show()
+
+  $('ul.page_tabs li').click(function () {
+    $('.tab_content').hide()
+    const activeTab = $(this).attr('rel')
+    $('#' + activeTab).fadeIn()
+
+    $('ul.page_tabs li').removeClass('active')
+    $(this).addClass('active')
+  })
+  $('ul.page_tabs li')
+    .last()
+    .addClass('tab_last')
 }
 </script>

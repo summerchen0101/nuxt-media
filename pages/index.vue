@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="showCarousel" class="banner-box">
+    <div class="banner-box">
       <div class="item">
         <img src="images/index/pc-banner1.jpg" class="show-pc">
         <img src="images/index/mb-banner1.jpg" alt="" class="show-mb">
@@ -290,7 +290,6 @@ export default {
   },
   data () {
     return {
-      showCarousel: false
     }
   },
   computed: {
@@ -301,16 +300,19 @@ export default {
   created () {
   },
   mounted () {
-    setTimeout(() => {
-      this.$mixin.loadScript('/js/script.js')
-      this.showCarousel = true
-    }, 200)
+    $('.imgLiquidFill').imgLiquid()
+    $('.banner-box').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    })
   },
   head () {
     return {
-      script: [
-        { type: 'text/javascript', src: '/plugins/slick/slick.js' }
-      ],
+      // script: [
+      //   { type: 'text/javascript', src: '/js/script.js', defer: true, body: true }
+      // ],
+
       link: [
         { rel: 'stylesheet', href: '/css/index.css' }
       ]

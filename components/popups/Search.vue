@@ -75,7 +75,7 @@ export default {
   mounted () {},
   methods: {
     onClickedSearch () {
-      // this.$('#searchModal').modal('hide')
+      $('#searchModal').modal('hide')
       this.$router.push({ name: 'tv-search-result' })
     }
   }

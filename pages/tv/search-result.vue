@@ -129,7 +129,7 @@ export default {
     return {}
   },
   mounted () {
-    this.$mixin.loadScript('/js/script.js')
+    $('.imgLiquidFill').imgLiquid()
   },
   head () {
     return {

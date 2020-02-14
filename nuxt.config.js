@@ -12,30 +12,24 @@ module.exports = {
   head: {
     title: "抖影电影 DOING MOVIE",
     link: [
-      {rel: "icon", type: "image/x-icon", href: "/images/favicon.png"},
-      {rel: "stylesheet", href: "/bootstrap/css/bootstrap.css"},
-      {rel: "stylesheet", href: "/fonts/font-awesome/css/font-awesome.css"},
-      {rel: "stylesheet", href: "/fonts/webfonts/style.css"},
-      {rel: "stylesheet", href: "/plugins/slick/slick.css"},
-      {rel: "stylesheet", href: "/plugins/slick/slick-theme.css"},
-      {rel: "stylesheet", href: "/plugins/fancyBox/jquery.fancybox.css"},
-      {rel: "stylesheet", href: "/css/style.css"},
+      { rel: "icon", type: "image/x-icon", href: "/images/favicon.png" },
+      { rel: "stylesheet", href: "/bootstrap/css/bootstrap.css" },
+      { rel: "stylesheet", href: "/fonts/font-awesome/css/font-awesome.css" },
+      { rel: "stylesheet", href: "/fonts/webfonts/style.css" },
+      { rel: "stylesheet", href: "/plugins/slick/slick.css" },
+      { rel: "stylesheet", href: "/plugins/slick/slick-theme.css" },
+      { rel: "stylesheet", href: "/plugins/fancyBox/jquery.fancybox.css" },
+      { rel: "stylesheet", href: "/css/style.css" },
     ],
     script: [
-      { type: 'text/javascript', src: '/plugins/jquery.min.js' },
-      { type: 'text/javascript', src: '/bootstrap/js/bootstrap.min.js' },
-      { type: 'text/javascript', src: '/plugins/modernizr.js' },
-      { type: 'text/javascript', src: '/plugins/imgLiquid-min.js' },
-      { type: 'text/javascript', src: '/plugins/fancyBox/jquery.fancybox.pack.js' },
-      // { type: 'text/javascript', src: '/plugins/slick/slick.js' },
-      // { type: 'text/javascript', src: '/js/script.js', defer: true }
+      { type: 'text/javascript', src: '/plugins/jquery.min.js', body: true },
+      { type: 'text/javascript', src: '/bootstrap/js/bootstrap.min.js', body: true },
+      { type: 'text/javascript', src: '/plugins/modernizr.js', body: true },
+      { type: 'text/javascript', src: '/plugins/imgLiquid-min.js', body: true },
+      { type: 'text/javascript', src: '/plugins/fancyBox/jquery.fancybox.pack.js', body: true },
+      { type: 'text/javascript', src: '/plugins/slick/slick.js', body: true },
+      { type: 'text/javascript', src: '/js/script.js', body: true }
     ]
-    // changed (newInfo, addedTags, removedTags) {
-    //   console.log('Metadata was updated!')
-    // },
-    // afterNavigation(metaInfo) {
-    //   console.log("afterNavigation")
-    // }
   },
   /*
   ** Customize the progress-bar color
@@ -55,7 +49,6 @@ module.exports = {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/mixins',
-    '@/plugins/jquery',
     '@/plugins/components',
   ],
   /*
@@ -87,17 +80,10 @@ module.exports = {
   */
   build: {
     transpile: [/^element-ui/],
-
-    // vendor: ["jquery"],
-    plugins: [
-      new webpack.ProvidePlugin({
-        $: "jquery"
-      })
-    ],
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
       config.module.rules.push({
         enforce: 'pre',
         test: /\.(js|vue)$/,

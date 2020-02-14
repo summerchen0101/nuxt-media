@@ -38,7 +38,7 @@ export default {
   mounted () {},
   methods: {
     onClickedLogin () {
-      this.$.fancybox.close()
+      $.fancybox.close()
       this.$router.push({ name: 'member-profile' })
     }
   }

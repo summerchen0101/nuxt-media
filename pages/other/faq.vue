@@ -61,20 +61,48 @@
 <script>
 export default {
   name: 'Faq',
-  components: {
-  },
+  components: {},
   data () {
     return {}
   },
   mounted () {
-    this.$mixin.loadScript('/js/script.js')
+    jqFix()
   },
   head () {
     return {
-      link: [
-        { rel: 'stylesheet', href: '/css/qa.css' }
-      ]
+      link: [{ rel: 'stylesheet', href: '/css/qa.css' }],
+      script: [{ type: 'text/javascript', src: '/js/script.js' }]
     }
   }
+}
+
+function jqFix () {
+  /* imgLiquid */
+  $('.imgLiquidFill').imgLiquid()
+  /* qa */
+  $('.qa_box > a').on('click', function () {
+    if ($(this).hasClass('active')) {
+      $(this).removeClass('active')
+      $(this)
+        .siblings('.qa_content')
+        .slideUp(200)
+      $('.qa_box > a i')
+        .removeClass('fa-caret-down')
+        .addClass('fa-caret-down')
+    } else {
+      $('.qa_box > a i')
+        .removeClass('fa-caret-down')
+        .addClass('fa-caret-down')
+      $(this)
+        .find('i')
+        .removeClass('fa-caret-down')
+      $('.qa_box > a').removeClass('active')
+      $(this).addClass('active')
+      $('.qa_content').slideUp(200)
+      $(this)
+        .siblings('.qa_content')
+        .slideDown(200)
+    }
+  })
 }
 </script>

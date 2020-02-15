@@ -22,13 +22,13 @@ module.exports = {
       { rel: "stylesheet", href: "/css/style.css" },
     ],
     script: [
-      { type: 'text/javascript', src: '/plugins/jquery.min.js', body: true },
-      { type: 'text/javascript', src: '/bootstrap/js/bootstrap.min.js', body: true },
-      { type: 'text/javascript', src: '/plugins/modernizr.js', body: true },
-      { type: 'text/javascript', src: '/plugins/imgLiquid-min.js', body: true },
-      { type: 'text/javascript', src: '/plugins/fancyBox/jquery.fancybox.pack.js', body: true },
-      { type: 'text/javascript', src: '/plugins/slick/slick.js', body: true },
-      { type: 'text/javascript', src: '/js/script.js', body: true }
+      { type: 'text/javascript', src: '/plugins/jquery.min.js'},
+      { type: 'text/javascript', src: '/bootstrap/js/bootstrap.min.js'},
+      { type: 'text/javascript', src: '/plugins/modernizr.js'},
+      { type: 'text/javascript', src: '/plugins/imgLiquid-min.js'},
+      { type: 'text/javascript', src: '/plugins/fancyBox/jquery.fancybox.pack.js'},
+      { type: 'text/javascript', src: '/plugins/slick/slick.js'},
+      { type: 'text/javascript', src: '/js/script.js'}
     ]
   },
   /*

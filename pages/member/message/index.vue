@@ -48,7 +48,7 @@ export default {
   head () {
     return {
       script: [
-        { type: 'text/javascript', src: '/js/script.js', body: true }
+        { type: 'text/javascript', src: '/js/script.js' }
       ]
     }
   }

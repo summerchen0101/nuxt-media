@@ -77,8 +77,6 @@ export default {
 }
 
 function jqFix () {
-  /* imgLiquid */
-  $('.imgLiquidFill').imgLiquid()
   /* qa */
   $('.qa_box > a').on('click', function () {
     if ($(this).hasClass('active')) {

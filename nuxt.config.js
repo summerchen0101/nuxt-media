@@ -1,6 +1,6 @@
 
-let webpack = require('webpack');
 require('dotenv').config()
+const host = require('./config/host')
 module.exports = {
   router: {
     linkActiveClass: 'select'
@@ -10,25 +10,25 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "抖影电影 DOING MOVIE",
+    title: '抖影电影 DOING MOVIE',
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/images/favicon.png" },
-      { rel: "stylesheet", href: "/bootstrap/css/bootstrap.css" },
-      { rel: "stylesheet", href: "/fonts/font-awesome/css/font-awesome.css" },
-      { rel: "stylesheet", href: "/fonts/webfonts/style.css" },
-      { rel: "stylesheet", href: "/plugins/slick/slick.css" },
-      { rel: "stylesheet", href: "/plugins/slick/slick-theme.css" },
-      { rel: "stylesheet", href: "/plugins/fancyBox/jquery.fancybox.css" },
-      { rel: "stylesheet", href: "/css/style.css" },
+      { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.png' },
+      { rel: 'stylesheet', href: '/bootstrap/css/bootstrap.css' },
+      { rel: 'stylesheet', href: '/fonts/font-awesome/css/font-awesome.css' },
+      { rel: 'stylesheet', href: '/fonts/webfonts/style.css' },
+      { rel: 'stylesheet', href: '/plugins/slick/slick.css' },
+      { rel: 'stylesheet', href: '/plugins/slick/slick-theme.css' },
+      { rel: 'stylesheet', href: '/plugins/fancyBox/jquery.fancybox.css' },
+      { rel: 'stylesheet', href: '/css/style.css' }
     ],
     script: [
-      { type: 'text/javascript', src: '/plugins/jquery.min.js'},
-      { type: 'text/javascript', src: '/bootstrap/js/bootstrap.min.js'},
-      { type: 'text/javascript', src: '/plugins/modernizr.js'},
-      { type: 'text/javascript', src: '/plugins/imgLiquid-min.js'},
-      { type: 'text/javascript', src: '/plugins/fancyBox/jquery.fancybox.pack.js'},
-      { type: 'text/javascript', src: '/plugins/slick/slick.js'},
-      { type: 'text/javascript', src: '/js/script.js'}
+      { type: 'text/javascript', src: '/plugins/jquery.min.js' },
+      { type: 'text/javascript', src: '/bootstrap/js/bootstrap.min.js' },
+      { type: 'text/javascript', src: '/plugins/modernizr.js' },
+      { type: 'text/javascript', src: '/plugins/imgLiquid-min.js' },
+      { type: 'text/javascript', src: '/plugins/fancyBox/jquery.fancybox.pack.js' },
+      { type: 'text/javascript', src: '/plugins/slick/slick.js' },
+      { type: 'text/javascript', src: '/js/script.js' }
     ]
   },
   /*
@@ -41,7 +41,7 @@ module.exports = {
   */
   css: [
     'element-ui/lib/theme-chalk/index.css',
-    './assets/transition.scss',
+    './assets/main.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -50,6 +50,8 @@ module.exports = {
     '@/plugins/element-ui',
     '@/plugins/mixins',
     '@/plugins/components',
+    '@/plugins/fetch',
+    '@/plugins/api'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -66,15 +68,25 @@ module.exports = {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    '@nuxtjs/proxy'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: process.env.API_BASE_URL,
-    withCredentials: true,
+    baseURL: `http://${host.prefix}.${host[process.env.DEV_ENV]}`,
+    withCredentials: true
+    // proxy: true
   },
+  // proxy: {
+  //   '/api': {
+  //     target: `http://${host.prefix}.${host[process.env.DEV_ENV]}`,
+  //     pathRewrite: {
+  //       '^/api': '/'
+  //     }
+  //   }
+  // },
   /*
   ** Build configuration
   */
@@ -83,7 +95,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    extend (config, ctx) {
       config.module.rules.push({
         enforce: 'pre',
         test: /\.(js|vue)$/,
@@ -94,5 +106,5 @@ module.exports = {
         }
       })
     }
-  },
+  }
 }

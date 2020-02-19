@@ -1,8 +1,8 @@
+const path = require('path')
 const Koa = require('koa')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
-let serve = require('koa-static');
-const path = require('path')
+const serve = require('koa-static')
 
 const app = new Koa()
 
@@ -26,7 +26,7 @@ async function start () {
     await builder.build()
   }
 
-  app.use(serve(path.join(__dirname, '/static')), '/static');
+  app.use(serve(path.join(__dirname, '/static')), '/static')
 
   app.use((ctx) => {
     ctx.status = 200

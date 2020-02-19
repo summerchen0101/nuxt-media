@@ -7,17 +7,17 @@
     <form class="form-horizontal login_dialog_form">
       <div class="form-group">
         <div class="col-xs-12">
-          <input type="text" class="form-control" placeholder="帐号">
+          <input v-model="form.account" type="text" class="form-control" placeholder="帐号">
         </div>
       </div>
       <div class="form-group">
         <div class="col-xs-12">
-          <input type="password" class="form-control" placeholder="密码(6-16位字母、数字和符号)">
+          <input v-model="form.pw" type="password" class="form-control" placeholder="密码(6-16位字母、数字和符号)">
         </div>
       </div>
       <div class="form-group">
         <div class="col-xs-12">
-          <input type="password" class="form-control" placeholder="确认密码">
+          <input v-model="form.pw_c" type="password" class="form-control" placeholder="确认密码">
         </div>
       </div>
       <div class="registered_dialog_txt">
@@ -26,7 +26,7 @@
       </div>
       <div class="form-group">
         <div class="dialog_form_btn">
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" class="btn btn-primary" @click.prevent="onSubmit">
             注册
           </button>
         </div>
@@ -43,6 +43,23 @@
 export default {
   name: 'LoginPopup',
   components: {},
-  mounted () {}
+  data () {
+    return {
+      form: {
+        account: '',
+        pw: '',
+        pw_c: ''
+      }
+    }
+  },
+  mounted () {},
+  methods: {
+    async onSubmit () {
+      const data = Object.assign({}, this.form, {
+        domain: this.host
+      })
+      await this.$store.dispatch('user/register', data)
+    }
+  }
 }
 </script>

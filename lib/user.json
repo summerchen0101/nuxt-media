@@ -1,0 +1,10 @@
+{
+  "login": {
+    "method": "post",
+    "url": "passport/member/login"
+  },
+  "register": {
+    "method": "post",
+    "url": "client/register"
+  }
+}

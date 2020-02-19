@@ -279,13 +279,7 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'Index',
   layout: 'main',
-  async asyncData ({ store, app, params }) {
-    await store.dispatch('tv/getList', { time: '2020-02-04' })
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve('hi')
-      }, 3000)
-    })
+  asyncData ({ store, app, params }) {
     return {}
   },
   data () {

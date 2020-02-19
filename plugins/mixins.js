@@ -1,4 +1,6 @@
 import Vue from 'vue'
+const pd = require('parse-domain')
+const host = require('@/config/host')
 
 const loadCSS = function (path) {
   const ele = document.createElement('link')
@@ -25,9 +27,16 @@ const unloadScript = function (path) {
   }
 }
 
-Vue.prototype.$mixin = {
-  loadCSS,
-  unloadCSS,
-  loadScript,
-  unloadScript
-}
+Vue.mixin({
+  computed: {
+    host () {
+      return pd(window.location.host) ? window.location.host : host[process.env.DEV_ENV]
+    }
+  },
+  methods: {
+    loadCSS,
+    unloadCSS,
+    loadScript,
+    unloadScript
+  }
+})

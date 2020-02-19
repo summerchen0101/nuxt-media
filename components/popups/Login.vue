@@ -8,7 +8,7 @@
       <form class="form-horizontal login_dialog_form">
         <div class="form-group">
           <div class="col-xs-12">
-            <ValidationProvider v-slot="v" rules="required|account" name="帐号">
+            <ValidationProvider v-slot="v" rules="required|account" name="account">
               <input v-model="form.account" type="text" class="form-control" placeholder="帐号">
               <span class="text-danger">{{ v.errors[0] }}</span>
             </ValidationProvider>
@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
           <div class="col-xs-12">
-            <ValidationProvider v-slot="v" rules="required|pw" name="密码">
+            <ValidationProvider v-slot="v" rules="required|pw" name="pw">
               <input v-model="form.pw" type="password" class="form-control" placeholder="密码">
               <span class="text-danger">{{ v.errors[0] }}</span>
             </ValidationProvider>

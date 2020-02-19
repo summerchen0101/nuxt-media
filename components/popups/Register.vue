@@ -4,38 +4,51 @@
       <span><img src="/images/login_dialog.png" alt=""></span>
       <span>会员注册</span>
     </div>
-    <form class="form-horizontal login_dialog_form">
-      <div class="form-group">
-        <div class="col-xs-12">
-          <input v-model="form.account" type="text" class="form-control" placeholder="帐号">
+    <ValidationObserver v-slot="{ invalid }">
+      <form class="form-horizontal login_dialog_form" @submit.prevent="onSubmit">
+        <div class="form-group">
+          <div class="col-xs-12">
+            <ValidationProvider v-slot="v" rules="required|account" name="account">
+              <input v-model="form.account" type="text" class="form-control" placeholder="帐号">
+              <span class="text-danger">{{ v.errors[0] }}</span>
+            </ValidationProvider>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-12">
-          <input v-model="form.pw" type="password" class="form-control" placeholder="密码(6-16位字母、数字和符号)">
+        <div class="form-group">
+          <div class="col-xs-12">
+            <ValidationProvider v-slot="v" rules="required|pw" name="pw">
+              <input v-model="form.pw" type="password" class="form-control" placeholder="密码(6-16位字母、数字和符号)">
+              <span class="text-danger">{{ v.errors[0] }}</span>
+            </ValidationProvider>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-12">
-          <input v-model="form.pw_c" type="password" class="form-control" placeholder="确认密码">
+        <div class="form-group">
+          <div class="col-xs-12">
+            <ValidationProvider v-slot="v" rules="required|match:@pw" name="pw_c">
+              <input v-model="form.pw_c" type="password" class="form-control" placeholder="确认密码">
+              <span class="text-danger">{{ v.errors[0] }}</span>
+            </ValidationProvider>
+          </div>
         </div>
-      </div>
-      <div class="registered_dialog_txt">
-        点击创建帐户，即表示同意相关
-        <a href="privacy.html">服务条款</a>
-      </div>
-      <div class="form-group">
-        <div class="dialog_form_btn">
-          <button type="submit" class="btn btn-primary" @click.prevent="onSubmit">
-            注册
-          </button>
+        <div class="registered_dialog_txt">
+          点击创建帐户，即表示同意相关
+          <a href="/other/service" target="service">
+            服务条款
+          </a>
         </div>
-      </div>
-      <div class="login_link login_link_account">
-        已有帐号?
-        <a id="go_log">立即登入</a>
-      </div>
-    </form>
+        <div class="form-group">
+          <div class="dialog_form_btn">
+            <button type="submit" class="btn btn-primary" :disabled="invalid">
+              注册
+            </button>
+          </div>
+        </div>
+        <div class="login_link login_link_account">
+          已有帐号?
+          <a id="go_log">立即登入</a>
+        </div>
+      </form>
+    </ValidationObserver>
   </div>
 </template>
 

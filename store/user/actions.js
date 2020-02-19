@@ -25,6 +25,7 @@ export default {
     if (res.code === '0') {
       $.fancybox.close()
       this.$router.push({ name: 'index' })
+      this.$router.app.$alert('注册成功', { type: 'success' })
     }
   }
 

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import DeviceDetector from 'device-detector-js'
 // const pd = require('parse-domain')
-const hostConfig = require('@/config/host')
+// const hostConfig = require('@/config/host')
 const dd = new DeviceDetector()
 
 const loadCSS = function (path) {
@@ -30,7 +30,7 @@ const unloadScript = function (path) {
 }
 
 const host = function () {
-  return process.env.DEV_ENV === 'test' ? hostConfig[process.env.DEV_ENV] : window.location.host
+  return window.location.hostname
 }
 
 const device = function () {

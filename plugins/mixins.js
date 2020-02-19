@@ -1,6 +1,8 @@
 import Vue from 'vue'
-const pd = require('parse-domain')
-const host = require('@/config/host')
+import DeviceDetector from 'device-detector-js'
+// const pd = require('parse-domain')
+const hostConfig = require('@/config/host')
+const dd = new DeviceDetector()
 
 const loadCSS = function (path) {
   const ele = document.createElement('link')
@@ -27,11 +29,39 @@ const unloadScript = function (path) {
   }
 }
 
+const host = function () {
+  return process.env.DEV_ENV === 'test' ? hostConfig[process.env.DEV_ENV] : window.location.host
+}
+
+const device = function () {
+  const _deviceMap = {
+    Android: 'android',
+    iOS: 'ios'
+  }
+  return _deviceMap[dd.parse(navigator.userAgent).os.name] || 'web'
+}
+
+const isMobile = function () {
+  const toMatch = [
+    /Android/i,
+    /webOS/i,
+    /iPhone/i,
+    /iPad/i,
+    /iPod/i,
+    /BlackBerry/i,
+    /Windows Phone/i
+  ]
+
+  return toMatch.some((toMatchItem) => {
+    return navigator.userAgent.match(toMatchItem)
+  })
+}
+
 Vue.mixin({
   computed: {
-    host () {
-      return pd(window.location.host) ? window.location.host : host[process.env.DEV_ENV]
-    }
+    host,
+    isMobile,
+    device
   },
   methods: {
     loadCSS,

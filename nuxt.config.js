@@ -11,6 +11,11 @@ module.exports = {
   */
   head: {
     title: '抖影电影 DOING MOVIE',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
+      { name: 'description', content: '' }
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.png' },
       { rel: 'stylesheet', href: '/bootstrap/css/bootstrap.css' },
@@ -51,7 +56,7 @@ module.exports = {
     '@/plugins/mixins',
     '@/plugins/components',
     '@/plugins/fetch',
-    '@/plugins/api'
+    '@/plugins/apiHub'
   ],
   /*
   ** Nuxt.js dev-modules

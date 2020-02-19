@@ -7,12 +7,12 @@
     <form class="form-horizontal login_dialog_form">
       <div class="form-group">
         <div class="col-xs-12">
-          <input type="text" class="form-control" placeholder="帐号">
+          <input v-model="form.account" type="text" class="form-control" placeholder="帐号">
         </div>
       </div>
       <div class="form-group">
         <div class="col-xs-12">
-          <input type="password" class="form-control" placeholder="密码">
+          <input v-model="form.pw" type="password" class="form-control" placeholder="密码">
         </div>
       </div>
       <div class="login_link login_link_forget">
@@ -35,11 +35,18 @@
 export default {
   name: 'LoginPopup',
   components: {},
+  data () {
+    return {
+      form: {
+        account: '',
+        pw: ''
+      }
+    }
+  },
   mounted () {},
   methods: {
-    onClickedLogin () {
-      $.fancybox.close()
-      this.$router.push({ name: 'member-profile' })
+    async onClickedLogin () {
+      await this.$store.dispatch('user/login', { ...this.form, device: this.device })
     }
   }
 }

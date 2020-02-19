@@ -12,6 +12,17 @@ export default {
     if (res.code === '0') {
       $.fancybox.close()
       this.$router.push({ name: 'member-profile' })
+      commit('switchLoginStatus', true)
+      commit('gotToken', res.data.access_token)
+    }
+  },
+  async logout ({ commit, dispatch }) {
+    const res = await this.$api.logout()
+    if (res.code === '0') {
+      this.$router.push({ name: 'index' })
+      this.$router.app.$alert('登出成功', { type: 'success' })
+      commit('switchLoginStatus', false)
+      commit('clearToken')
     }
   },
   async register ({ commit, dispatch }, _d) {
@@ -26,6 +37,7 @@ export default {
       $.fancybox.close()
       this.$router.push({ name: 'index' })
       this.$router.app.$alert('注册成功', { type: 'success' })
+      commit('switchLoginStatus', true)
     }
   }
 

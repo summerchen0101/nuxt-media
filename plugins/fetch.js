@@ -29,6 +29,9 @@ export default ({ app, store, $axios }, inject) => {
       method,
       url: _url,
       data,
+      headers: {
+        Authorization: `Bearer ${store.state.user.token}`
+      },
       ...config
     })
   }

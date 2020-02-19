@@ -1,8 +1,11 @@
 export default {
-  gotList (state, payload) {
-    state.list = payload
+  gotToken (state, token) {
+    state.token = token
   },
-  gotItem (state, payload) {
-    state.item = payload
+  clearToken (state) {
+    state.token = ''
+  },
+  switchLoginStatus (state, boolean) {
+    state.login = boolean
   }
 }

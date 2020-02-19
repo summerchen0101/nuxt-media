@@ -3,6 +3,7 @@ const Koa = require('koa')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 const serve = require('koa-static')
+const opn = require('opn')
 
 const app = new Koa()
 
@@ -36,8 +37,10 @@ async function start () {
   })
 
   app.listen(port, host)
+  const url = `http://${host}:${port}`
+  opn(url, { app: 'google chrome' })
   consola.ready({
-    message: `Server listening on http://${host}:${port}`,
+    message: `Server listening on ${url}`,
     badge: true
   })
 }

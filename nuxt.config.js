@@ -57,6 +57,7 @@ module.exports = {
   */
   plugins: [
     '@/plugins/element-ui',
+    { src: '@/plugins/vuex-persist', ssr: false },
     '@/plugins/vee-validate',
     '@/plugins/mixins',
     '@/plugins/components',

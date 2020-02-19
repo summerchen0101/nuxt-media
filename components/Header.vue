@@ -81,7 +81,23 @@
             <li>
               <a data-toggle="modal" data-target="#searchModal"><span><i class="fa fa-search" /></span><span>搜寻</span></a>
             </li>
-            <li><a id="loginBtn" class="login" href="#login_dialog"><span><i class="icon-user" /></span><span>登入</span></a></li>
+            <li v-if="isLogin" class="login-img show-pc">
+              <a>
+                <b class="img" style="background-image:url(/images/member/member_bigImg.jpg)" />
+                <span>会员</span>
+                <i class="arr-icon fa fa-caret-down" />
+              </a>
+              <div class="dropdown">
+                <a href="record.html">观看纪录</a>
+                <a href="collect.html">我的收藏</a>
+                <a href="message.html">我的消息</a>
+                <a href="setting.html" class="select">帐号设置</a>
+                <a href="" @click.prevent="$store.dispatch('user/logout')">登出</a>
+              </div>
+            </li>
+            <li v-else>
+              <a id="loginBtn" class="login" href="#login_dialog"><span><i class="icon-user" /></span><span>登入</span></a>
+            </li>
           </ul><a />
         </div>
       </nav>
@@ -91,9 +107,15 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'Header',
   components: {},
+  computed: {
+    ...mapGetters({
+      isLogin: 'user/login'
+    })
+  },
   mounted () {}
 }
 </script>

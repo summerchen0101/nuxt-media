@@ -6,5 +6,9 @@
   "register": {
     "method": "post",
     "url": "client/register"
+  },
+  "logout": {
+    "method": "post",
+    "url": "client/logout"
   }
 }

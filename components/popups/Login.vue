@@ -4,30 +4,38 @@
       <span><img src="/images/login_dialog.png" alt=""></span>
       <span>会员登入</span>
     </div>
-    <form class="form-horizontal login_dialog_form">
-      <div class="form-group">
-        <div class="col-xs-12">
-          <input v-model="form.account" type="text" class="form-control" placeholder="帐号">
+    <ValidationObserver v-slot="{ invalid }">
+      <form class="form-horizontal login_dialog_form">
+        <div class="form-group">
+          <div class="col-xs-12">
+            <ValidationProvider v-slot="v" rules="required|account" name="帐号">
+              <input v-model="form.account" type="text" class="form-control" placeholder="帐号">
+              <span class="text-danger">{{ v.errors[0] }}</span>
+            </ValidationProvider>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-12">
-          <input v-model="form.pw" type="password" class="form-control" placeholder="密码">
+        <div class="form-group">
+          <div class="col-xs-12">
+            <ValidationProvider v-slot="v" rules="required|pw" name="密码">
+              <input v-model="form.pw" type="password" class="form-control" placeholder="密码">
+              <span class="text-danger">{{ v.errors[0] }}</span>
+            </ValidationProvider>
+          </div>
         </div>
-      </div>
-      <div class="login_link login_link_forget">
+        <div class="login_link login_link_forget">
         <!-- <a id="go_forgetPw">忘记密码</a> -->
-      </div>
-      <div class="form-group">
-        <div class="dialog_form_btn">
-          <a href="" class="btn btn-primary" @click.prevent="onClickedLogin">登入</a>
         </div>
-      </div>
-      <div class="login_link login_link_account">
-        没有帐号?
-        <a id="go_reg">创建一个新帐号</a>
-      </div>
-    </form>
+        <div class="form-group">
+          <div class="dialog_form_btn">
+            <a href="" class="btn btn-primary" :disabled="invalid" @click.prevent="onClickedLogin(invalid)">登入</a>
+          </div>
+        </div>
+        <div class="login_link login_link_account">
+          没有帐号?
+          <a id="go_reg">创建一个新帐号</a>
+        </div>
+      </form>
+    </ValidationObserver>
   </div>
 </template>
 
@@ -45,7 +53,8 @@ export default {
   },
   mounted () {},
   methods: {
-    async onClickedLogin () {
+    async onClickedLogin (invalid) {
+      if (invalid) { return }
       await this.$store.dispatch('user/login', { ...this.form, device: this.device })
     }
   }

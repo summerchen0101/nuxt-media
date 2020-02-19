@@ -10,7 +10,6 @@ export default ({ app, store, $axios }, inject) => {
       ...config
     })
       .then((res) => {
-        console.log(res)
         if (res.status === 200) {
           if (res.data.code && res.data.code.includes('00001-5')) {
             const msgs = res.data.data.msg.reduce((str, msg) => {

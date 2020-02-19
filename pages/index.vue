@@ -275,7 +275,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 export default {
   name: 'Index',
   layout: 'main',
@@ -287,9 +287,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({
-      tvs: 'tv/tvs'
-    })
   },
   created () {
   },

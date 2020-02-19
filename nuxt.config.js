@@ -1,3 +1,7 @@
+/**
+ * TODO: 加上element-ui 客製化色系
+ * TODO: 加上vee-validate 做表單驗證
+ */
 
 require('dotenv').config()
 const host = require('./config/host')
@@ -53,6 +57,7 @@ module.exports = {
   */
   plugins: [
     '@/plugins/element-ui',
+    '@/plugins/vee-validate',
     '@/plugins/mixins',
     '@/plugins/components',
     '@/plugins/fetch',

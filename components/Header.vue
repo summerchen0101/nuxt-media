@@ -96,7 +96,7 @@
               </div>
             </li>
             <li v-else>
-              <a id="loginBtn" class="login" href="#login_dialog"><span><i class="icon-user" /></span><span>登入</span></a>
+              <a class="fancybox" href="#login_dialog"><span><i class="icon-user" /></span><span>登入</span></a>
             </li>
           </ul><a />
         </div>

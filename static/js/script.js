@@ -31,7 +31,7 @@ $('.qa_box > a').on('click', function () {
   }
 })
 /* login dialog */
-$('.login').fancybox({
+$('.fancybox').fancybox({
   wrapCSS: 'fancybox-login',
   padding: 40,
   width: 800,
@@ -45,29 +45,29 @@ $('.login').fancybox({
   }
 })
 /* reg login forget_pw change */
-$(function () {
-  $('#login_dialog #registered_dialog_inner, #registered_dialog #login_dialog_inner2, #forget_pw_dialog_inner, #forget_pw_dialog_inner2').hide()
-  $('#loginBtn').click(function () {
-    $('#forget_pw_dialog_inner').css('display', 'none')
-    $('#login_dialog_inner').show()
-  })
-  $('#regBtn').click(function () {
-    $('#forget_pw_dialog_inner2').css('display', 'none')
-    $('#registered_dialog_inner2').show()
-  })
-  $('#go_reg, #go_reg2').click(function () {
-    $('#registered_dialog_inner, #registered_dialog_inner2').show()
-    $('#login_dialog_inner, #login_dialog_inner2').hide()
-  })
-  $('#go_log, #go_log2').click(function () {
-    $('#login_dialog_inner, #login_dialog_inner2').show()
-    $('#registered_dialog_inner, #registered_dialog_inner2').hide()
-  })
-  $('#go_forgetPw, #go_forgetPw2').click(function () {
-    $('#forget_pw_dialog_inner, #forget_pw_dialog_inner2').show()
-    $('#login_dialog_inner, #login_dialog_inner2').hide()
-  })
-})
+// $(function () {
+//   $('#login_dialog #registered_dialog_inner, #registered_dialog #login_dialog_inner2, #forget_pw_dialog_inner, #forget_pw_dialog_inner2').hide()
+//   $('#loginBtn').click(function () {
+//     $('#forget_pw_dialog_inner').css('display', 'none')
+//     $('#login_dialog_inner').show()
+//   })
+//   $('#regBtn').click(function () {
+//     $('#forget_pw_dialog_inner2').css('display', 'none')
+//     $('#registered_dialog_inner2').show()
+//   })
+//   $('#go_reg, #go_reg2').click(function () {
+//     $('#registered_dialog_inner, #registered_dialog_inner2').show()
+//     $('#login_dialog_inner, #login_dialog_inner2').hide()
+//   })
+//   $('#go_log, #go_log2').click(function () {
+//     $('#login_dialog_inner, #login_dialog_inner2').show()
+//     $('#registered_dialog_inner, #registered_dialog_inner2').hide()
+//   })
+//   $('#go_forgetPw, #go_forgetPw2').click(function () {
+//     $('#forget_pw_dialog_inner, #forget_pw_dialog_inner2').show()
+//     $('#login_dialog_inner, #login_dialog_inner2').hide()
+//   })
+// })
 /* scrollTop */
 // $(function () {
 //   $('.scrollTop').click(function () {

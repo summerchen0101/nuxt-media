@@ -2,9 +2,9 @@
  * TODO: 加上element-ui 客製化色系
  * TODO: 加上vee-validate 做表單驗證
  */
-
 require('dotenv').config()
 const host = require('./config/host')
+const isDev = process.env.NODE_ENV === 'development'
 module.exports = {
   router: {
     linkActiveClass: 'select'
@@ -69,7 +69,8 @@ module.exports = {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Nuxt.js modules
@@ -77,8 +78,6 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
     '@nuxtjs/proxy'
   ],
   /*
@@ -86,17 +85,17 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: '/api',
+    baseURL: isDev ? '/api' : `http://${host.prefix}.${host[process.env.DEV_ENV]}`,
     withCredentials: true
   },
-  proxy: {
+  proxy: isDev ? {
     '/api': {
       target: `http://${host.prefix}.${host[process.env.DEV_ENV]}`,
       pathRewrite: {
         '^/api': '/'
       }
     }
-  },
+  } : {},
   /*
   ** Build configuration
   */

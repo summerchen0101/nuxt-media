@@ -28,7 +28,15 @@
           </div>
           <div class="form-group">
             <div class="dialog_form_btn">
-              <a href="" class="btn btn-primary" :disabled="invalid" @click.prevent="onClickedLogin(invalid)">登入</a>
+              <a v-if="loading" class="btn btn-primary" href="" disabled>登入中...</a>
+              <a
+                v-else
+                href=""
+                class="btn btn-primary"
+                :disabled="invalid"
+                @click.prevent="onClickedLogin(invalid)"
+              >
+                登入</a>
             </div>
           </div>
           <div class="login_link login_link_account">
@@ -50,14 +58,17 @@ export default {
       form: {
         account: '',
         pw: ''
-      }
+      },
+      loading: false
     }
   },
   mounted () {},
   methods: {
     async onClickedLogin (invalid) {
       if (invalid) { return }
+      this.loading = true
       await this.$store.dispatch('user/login', { ...this.form, device: this.device })
+      this.loading = false
     }
   }
 }

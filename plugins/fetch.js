@@ -1,24 +1,32 @@
 import errCode from '@/config/errCode'
 
-export default ({ app, store, $axios }, inject) => {
+export default ({ app, store, $axios, redirect }, inject) => {
   // axios回傳值調整
   $axios.onResponse((res) => {
     if (res.status === 200) {
-      if (res.data.code !== '0' && res.data.data && res.data.data.msg) {
-        let msgs = res.data.data.msg
-        if (typeof msgs === 'string') { msgs = [msgs] }
-        msgs = msgs.reduce((str, msg) => {
-          str += (errCode[msg] || msg) + '\n'
-          return str
-        }, '')
-        app.router.app.$alert(msgs)
+      const resCode = res.data.code
+      const resMsg = res.data.data && res.data.data.msg
+      if (resCode !== '0' && resMsg) {
+        if (resMsg === 'Unauthenticated.') {
+          app.router.push({ name: 'index' })
+          store.dispatch('user/clear')
+        } else if (typeof resMsg === 'string') {
+          app.router.app.$alert(errCode[resMsg] || resMsg)
+        } else if (Array.isArray(resMsg)) {
+          const msgs = resMsg.reduce((str, msg) => {
+            str += (errCode[resMsg] || resMsg) + '\n'
+            return str
+          }, '')
+          app.router.app.$alert(msgs)
+        }
       }
+      return res.data
     } else if (res.status === 401) {
-      app.router.push({ name: 'index' })
+      redirect('/')
+      store.dispatch('user/clear')
     } else {
       app.router.app.$alert(`操作失敗(${res.status})`)
     }
-    return res.data
   }, (error) => {
     return Promise.reject(error)
   })

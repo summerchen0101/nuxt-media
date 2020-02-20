@@ -10,5 +10,13 @@
   "logout": {
     "method": "post",
     "url": "client/logout"
+  },
+  "getProfile": {
+    "method": "get",
+    "url": "client/profile"
+  },
+  "updateProfile": {
+    "method": "put",
+    "url": "client/profile"
   }
 }

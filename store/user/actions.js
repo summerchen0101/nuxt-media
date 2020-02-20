@@ -1,4 +1,15 @@
 export default {
+  clear ({ commit }) {
+    commit('clearToken')
+    commit('clearUser')
+    commit('switchLoginStatus', false)
+  },
+  async checkLogin ({ commit, dispatch }) {
+    const res = await this.$api.getProfile()
+    if (res.code !== '0') {
+      commit('switchLoginStatus', true)
+    }
+  },
   async login ({ commit, dispatch }, _d) {
     const data = {
       username: _d.account,
@@ -37,6 +48,18 @@ export default {
       $.fancybox.close()
       this.$router.push({ name: 'index' })
       this.$router.app.$alert('注册成功请重新登入', { type: 'success' })
+    }
+  },
+  async getProfile ({ commit, dispatch }) {
+    const res = await this.$api.getProfile()
+    if (res.code === '0') {
+      commit('gotProfile', res.data)
+    }
+  },
+  async updateProfile ({ commit, dispatch }, profile) {
+    const res = await this.$api.updateProfile(profile)
+    if (res.code === '0') {
+      this.$router.app.$alert('资料更新成功', { type: 'success' })
     }
   }
 

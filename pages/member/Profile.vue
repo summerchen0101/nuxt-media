@@ -28,14 +28,14 @@
             <div class="form-group setting_group">
               <label for="user_id" class="control-label">帐号</label>
               <div>
-                <input id="user_id" type="text" class="form-control">
+                <input id="user_id" v-model="form.account" type="text" class="form-control">
               </div>
             </div>
             <div class="form-box-column">
               <div class="form-group left_group">
                 <label for="name" class="control-label">暱称</label>
                 <div>
-                  <input id="name" type="text" class="form-control">
+                  <input id="name" v-model="form.nick" type="text" class="form-control">
                 </div>
               </div>
               <div class="form-group right_group">
@@ -50,13 +50,13 @@
               <div class="form-group left_group">
                 <label for="email" class="control-label">信箱</label>
                 <div>
-                  <input id="email" type="email" class="form-control">
+                  <input id="email" v-model="form.email" type="email" class="form-control">
                 </div>
               </div>
               <div class="form-group right_group">
                 <label for="phone" class="control-label">手机</label>
                 <div>
-                  <input id="phone" type="text" class="form-control">
+                  <input id="phone" v-model="form.phone" type="text" class="form-control">
                 </div>
               </div>
             </div>
@@ -131,10 +131,35 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'Profile',
+  async asyncData ({ store, redirect }) {
+    try {
+      await store.dispatch('user/getProfile')
+    } catch (err) {
+      redirect('/')
+    }
+  },
   data () {
-    return {}
+    return {
+      form: {
+        account: '',
+        nick: '',
+        email: '',
+        phone: ''
+      }
+    }
+  },
+  computed: {
+    ...mapGetters({
+      profile: 'user/profile'
+    })
+  },
+  watch: {
+    profile (newProfile, oldProfile) {
+      this.form = Object.assign({}, newProfile)
+    }
   },
   mounted () {
     jqFix()

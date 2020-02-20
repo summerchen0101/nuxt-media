@@ -86,18 +86,17 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: `http://${host.prefix}.${host[process.env.DEV_ENV]}`,
+    baseURL: '/api',
     withCredentials: true
-    // proxy: true
   },
-  // proxy: {
-  //   '/api': {
-  //     target: `http://${host.prefix}.${host[process.env.DEV_ENV]}`,
-  //     pathRewrite: {
-  //       '^/api': '/'
-  //     }
-  //   }
-  // },
+  proxy: {
+    '/api': {
+      target: `http://${host.prefix}.${host[process.env.DEV_ENV]}`,
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
+  },
   /*
   ** Build configuration
   */

@@ -41,26 +41,9 @@ const device = function () {
   return _deviceMap[dd.parse(navigator.userAgent).os.name] || 'web'
 }
 
-const isMobile = function () {
-  const toMatch = [
-    /Android/i,
-    /webOS/i,
-    /iPhone/i,
-    /iPad/i,
-    /iPod/i,
-    /BlackBerry/i,
-    /Windows Phone/i
-  ]
-
-  return toMatch.some((toMatchItem) => {
-    return navigator.userAgent.match(toMatchItem)
-  })
-}
-
 Vue.mixin({
   computed: {
     host,
-    isMobile,
     device
   },
   methods: {

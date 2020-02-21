@@ -33,10 +33,10 @@ extend('pw', {
 
 extend('match', {
   params: ['target'],
-  validate (value, { target, targetName }) {
+  validate (value, { target }) {
     return value === target
   },
-  message: '不符合'
+  message: '密码不符合'
 })
 
 extend('pattern', {

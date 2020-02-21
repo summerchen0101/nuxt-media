@@ -91,7 +91,7 @@
                 <a href="record.html">观看纪录</a>
                 <a href="collect.html">我的收藏</a>
                 <a href="message.html">我的消息</a>
-                <a href="setting.html" class="select">帐号设置</a>
+                <a href="/member/profile" class="select">帐号设置</a>
                 <a href="" @click.prevent="$store.dispatch('user/logout')">登出</a>
               </div>
             </li>
@@ -100,6 +100,19 @@
             </li>
           </ul><a />
         </div>
+        <li class="login-img show-mb">
+          <a v-if="isLogin">
+            <b class="img" style="background-image:url(/images/member/member_bigImg.jpg)" />
+            <i class="arr-icon fa fa-caret-down" />
+          </a>
+          <div class="dropdown">
+            <a href="record.html">观看纪录</a>
+            <a href="collect.html">我的收藏</a>
+            <a href="message.html">我的消息</a>
+            <a href="/member/profile">帐号设置</a>
+            <a href="" @click.prevent="$store.dispatch('user/logout')">登出</a>
+          </div>
+        </li>
       </nav>
       <!--nav end-->
     </div>

@@ -1,25 +1,11 @@
-import errCode from '@/config/errCode'
+import errMsgs from '@/config/errMsgs'
+import errCodes from '@/config/errCodes'
 
 export default ({ app, store, $axios, redirect }, inject) => {
   // axios回傳值調整
   $axios.onResponse((res) => {
     if (res.status === 200) {
-      const resCode = res.data.code
-      const resMsg = res.data.data && res.data.data.msg
-      if (resCode !== '0' && resMsg) {
-        if (resMsg === 'Unauthenticated.') {
-          app.router.push({ name: 'index' })
-          store.dispatch('user/clear')
-        } else if (typeof resMsg === 'string') {
-          app.router.app.$alert(errCode[resMsg] || resMsg)
-        } else if (Array.isArray(resMsg)) {
-          const msgs = resMsg.reduce((str, msg) => {
-            str += (errCode[resMsg] || resMsg) + '\n'
-            return str
-          }, '')
-          app.router.app.$alert(msgs)
-        }
-      }
+      handleErrorCode(app, store, res.data)
       return res.data
     } else if (res.status === 401) {
       redirect('/')
@@ -44,4 +30,27 @@ export default ({ app, store, $axios, redirect }, inject) => {
     })
   }
   inject('fetch', fetch)
+}
+
+function handleErrorCode (app, store, data) {
+  const resCode = data.code
+  const resMsg = data.data && data.data.msg
+  if (Array.isArray(resCode)) {
+    const code = resCode[0]
+    const msg = errCodes[code] || errCodes.default
+    app.router.app.$alert(msg)
+  } else if (resCode !== '0' && resMsg) {
+    if (resMsg === 'Unauthenticated.') {
+      app.router.push({ name: 'index' })
+      store.dispatch('user/clear')
+    } else if (typeof resMsg === 'string') {
+      app.router.app.$alert(errMsgs[resMsg] || resMsg)
+    } else if (Array.isArray(resMsg)) {
+      const msgs = resMsg.reduce((str, msg) => {
+        str += (errMsgs[resMsg] || resMsg) + '\n'
+        return str
+      }, '')
+      app.router.app.$alert(msgs)
+    }
+  }
 }

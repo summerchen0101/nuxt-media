@@ -69,6 +69,9 @@ export default {
       this.loading = true
       await this.$store.dispatch('user/login', { ...this.form, device: this.device })
       this.loading = false
+      if (this.device !== 'web') {
+        $('.navbar-hamburger').trigger('click')
+      }
     }
   }
 }

@@ -62,7 +62,8 @@ export default {
       loading: false
     }
   },
-  mounted () {},
+  mounted () {
+  },
   methods: {
     async onClickedLogin (invalid) {
       if (invalid) { return }
@@ -70,7 +71,7 @@ export default {
       await this.$store.dispatch('user/login', { ...this.form, device: this.device })
       this.loading = false
       if (this.device !== 'web') {
-        $('.navbar-hamburger').trigger('click')
+        $('.menuBg').trigger('click')
       }
     }
   }

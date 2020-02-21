@@ -2,7 +2,6 @@
  * TODO: 加上element-ui 客製化色系
  * TODO: 加上vee-validate 做表單驗證
  */
-const bodyParser = require('body-parser')
 const session = require('express-session')
 
 require('dotenv').config()
@@ -66,6 +65,7 @@ module.exports = {
     '@/plugins/mixins',
     '@/plugins/components',
     '@/plugins/fetch',
+    '@/plugins/nFetch',
     '@/plugins/apiHub'
   ],
   /*

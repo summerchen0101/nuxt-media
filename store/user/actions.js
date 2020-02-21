@@ -25,7 +25,7 @@ export default {
       this.$router.push({ name: 'member-profile' })
       commit('switchLoginStatus', true)
       commit('gotToken', res.data.access_token)
-      this.$axios.post('session/auth', { token: res.data.access_token })
+      this.$nFetch.post('session/auth', { token: res.data.access_token })
     }
   },
   async logout ({ commit, dispatch }) {
@@ -35,7 +35,7 @@ export default {
       this.$router.app.$alert('登出成功', { type: 'success' })
       commit('switchLoginStatus', false)
       commit('clearToken')
-      this.$axios.delete('session/auth')
+      this.$nFetch.delete('session/auth')
     }
   },
   async register ({ commit, dispatch }, _d) {

@@ -2,6 +2,9 @@
  * TODO: 加上element-ui 客製化色系
  * TODO: 加上vee-validate 做表單驗證
  */
+const bodyParser = require('body-parser')
+const session = require('express-session')
+
 require('dotenv').config()
 const host = require('./config/host')
 const isDev = process.env.NODE_ENV === 'development'
@@ -58,7 +61,7 @@ module.exports = {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/storage',
-    { src: '@/plugins/vuex-persist', ssr: false },
+    // { src: '@/plugins/vuex-persist', ssr: false },
     '@/plugins/vee-validate',
     '@/plugins/mixins',
     '@/plugins/components',
@@ -86,7 +89,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: isDev ? '/api' : `http://${host.prefix}.${host[process.env.DEV_ENV]}`,
+    // baseURL: isDev ? '/api' : `http://${host.prefix}.${host[process.env.DEV_ENV]}`,
     withCredentials: true
   },
   proxy: isDev ? {
@@ -116,5 +119,17 @@ module.exports = {
         }
       })
     }
-  }
+  },
+  serverMiddleware: [
+    // body-parser middleware
+    // bodyParser.json(),
+    // session middleware
+    session({
+      secret: 'summer-is-cool',
+      resave: false,
+      saveUninitialized: false,
+      cookie: { maxAge: 60000 }
+    }),
+    { path: '/session', handler: '~/server/api' }
+  ]
 }

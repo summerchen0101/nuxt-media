@@ -1,9 +1,14 @@
 import errMsgs from '@/config/errMsgs'
 import errCodes from '@/config/errCodes'
+const host = require('@/config/host')
+const isDev = process.env.NODE_ENV === 'development'
 
 export default ({ app, store, $axios, redirect }, inject) => {
   // axios回傳值調整
-  $axios.onResponse((res) => {
+  const axiosInstance = $axios.create({
+    baseURL: isDev ? '/api' : `http://${host.prefix}.${host[process.env.DEV_ENV]}`
+  })
+  axiosInstance.onResponse((res) => {
     if (res.status === 200) {
       handleErrorCode(app, store, res.data)
       return res.data
@@ -19,7 +24,7 @@ export default ({ app, store, $axios, redirect }, inject) => {
   const fetch = function ({ method, url }, data, config) {
     // 帶入url的變數值
     const _url = url.replace(/\$\{\s*([$#@\-\d\w]+)\s*\}/gim, (v, val) => data[val])
-    return $axios({
+    return axiosInstance({
       method,
       url: _url,
       data,

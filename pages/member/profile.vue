@@ -134,13 +134,13 @@
 import { mapGetters } from 'vuex'
 export default {
   name: 'Profile',
-  async asyncData ({ store, redirect }) {
-    try {
-      await store.dispatch('user/getProfile')
-    } catch (err) {
-      redirect('/')
-    }
-  },
+  // async asyncData ({ store, redirect }) {
+  //   try {
+  //     await store.dispatch('user/getProfile')
+  //   } catch (err) {
+  //     redirect('/')
+  //   }
+  // },
   data () {
     return {
       form: {
@@ -161,7 +161,8 @@ export default {
       this.form = Object.assign({}, newProfile)
     }
   },
-  mounted () {
+  async mounted () {
+    await this.$store.dispatch('user/getProfile')
     jqFix()
   },
   head () {

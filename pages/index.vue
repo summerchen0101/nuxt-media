@@ -279,13 +279,6 @@
 export default {
   name: 'Index',
   layout: 'main',
-  async asyncData ({ store, app, params }) {
-    try {
-      await store.dispatch('user/checkLogin')
-    } catch (err) {
-      console.log('err')
-    }
-  },
   data () {
     return {
     }

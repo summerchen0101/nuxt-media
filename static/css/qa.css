@@ -1,3 +1,51 @@
+.qa-tabs {
+  border: none;
+  color: #999999;
+  position: relative;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+.qa-tabs > li {
+  float: inherit;
+  margin-bottom: 0;
+}
+
+.qa-tabs > li > a {
+  display: block;
+  border: none;
+  color: #999;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  background-color: #eee;
+  border: 1px solid #cccccc;
+}
+
+.qa-tabs > li > a:hover, .qa-tabs > li > a:focus {
+  background-color: #ff443f;
+  color: #fff;
+  border-color: #ff443f;
+}
+
+.qa-tabs > li.active > a {
+  background-color: #ff443f;
+  border-color: #ff443f;
+  color: #fff;
+}
+
+.qa-tabs > li.active > a:hover, .qa-tabs > li.active > a:focus {
+  background-color: #ff443f;
+  border-color: #ff443f;
+  color: #fff;
+}
+
 .qa_container {
   position: relative;
   height: auto;

@@ -188,9 +188,15 @@ input:focus {
   margin-bottom: 20px;
 }
 
-.fancybox-login .fancybox-skin {
+.fancybox-login .fancybox-skin, .dialog_box {
   background: #182029;
   border: 1px solid #34495d;
+}
+
+.dialog_box {
+  padding: 40px;
+  max-width: 372px;
+  border-radius: 4px;
 }
 
 .login_dialog_title {
@@ -255,19 +261,21 @@ input:focus {
   cursor: pointer;
 }
 
-.fancybox-login .dialog_form_btn {
+.dialog_form_btn {
   text-align: center;
 }
 
-.fancybox-login .dialog_form_btn button,
-.fancybox-login .dialog_form_btn a {
+.dialog_form_btn button,
+.dialog_form_btn a,
+.dialog_form_btn a[disabled]:hover,
+.dialog_form_btn a[disabled]:focus {
   width: calc(100% - 30px);
   background: #ff443f;
   border: none;
 }
 
-.fancybox-login .dialog_form_btn button:hover,
-.fancybox-login .dialog_form_btn a:hover {
+.dialog_form_btn button:hover,
+.dialog_form_btn a:hover {
   background: #de2d28;
 }
 

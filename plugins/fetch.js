@@ -1,12 +1,11 @@
 import errMsgs from '@/config/errMsgs'
 import errCodes from '@/config/errCodes'
 const host = require('@/config/host')
-const isDev = process.env.NODE_ENV === 'development'
 
 export default ({ app, store, $axios, redirect }, inject) => {
   // axios回傳值調整
   const axiosInstance = $axios.create({
-    baseURL: isDev ? '/api' : `http://${host.prefix}.${host[process.env.DEV_ENV]}`
+    baseURL: `http://${host.prefix}.${host[process.env.DEV_ENV]}`
   })
   axiosInstance.onResponse((res) => {
     if (res.status === 200) {

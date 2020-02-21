@@ -5,8 +5,6 @@
 const session = require('express-session')
 
 require('dotenv').config()
-const host = require('./config/host')
-const isDev = process.env.NODE_ENV === 'development'
 module.exports = {
   router: {
     linkActiveClass: 'select'
@@ -89,17 +87,8 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    // baseURL: isDev ? '/api' : `http://${host.prefix}.${host[process.env.DEV_ENV]}`,
     withCredentials: true
   },
-  proxy: isDev ? {
-    '/api': {
-      target: `http://${host.prefix}.${host[process.env.DEV_ENV]}`,
-      pathRewrite: {
-        '^/api': '/'
-      }
-    }
-  } : {},
   /*
   ** Build configuration
   */

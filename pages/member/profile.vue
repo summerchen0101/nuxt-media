@@ -45,8 +45,9 @@ export default {
     return {
     }
   },
-  mounted () {
+  async mounted () {
     jqFix()
+    await this.$store.dispatch('user/getProfile')
   },
   methods: {
   },

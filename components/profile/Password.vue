@@ -22,7 +22,7 @@
       <div class="form-group">
         <label for="check_pw" class="control-label">确认密码</label>
         <div>
-          <ValidationProvider v-slot="v" rules="required|match:@pw" name="pw_confirm">
+          <ValidationProvider v-slot="v" rules="required|match:@new_pw" name="pw_confirm">
             <input id="check_pw" v-model="form.pw_c" type="password" class="form-control">
             <span class="text-danger">{{ v.errors[0] }}</span>
           </ValidationProvider>

@@ -47,9 +47,11 @@ extend('email', {
 extend('match', {
   params: ['target'],
   validate (value, { target }) {
-    return value === fields[target] || target
+    return value === target
   },
-  message: '密码不符合'
+  message: (fieldName, placeholder) => {
+    return `${fields[fieldName] || fieldName}不符合`
+  }
 })
 
 extend('pattern', {

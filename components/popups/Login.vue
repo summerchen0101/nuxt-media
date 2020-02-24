@@ -5,8 +5,8 @@
         <span><img src="/images/login_dialog.png" alt=""></span>
         <span>会员登入</span>
       </div>
-      <ValidationObserver v-slot="{ invalid }">
-        <form class="form-horizontal login_dialog_form">
+      <ValidationObserver v-slot="{ invalid, reset }">
+        <form ref="form" class="form-horizontal login_dialog_form" @reset.prevent="reset">
           <div class="form-group">
             <div class="col-xs-12">
               <ValidationProvider v-slot="v" rules="required|account" name="account">
@@ -63,6 +63,25 @@ export default {
     }
   },
   mounted () {
+    const vm = this
+    $('.fancybox').fancybox({
+      wrapCSS: 'fancybox-login',
+      padding: 40,
+      width: 800,
+      maxWidth: '100%',
+      helpers: {
+        overlay: {
+          css: {
+            background: 'rgba(0,0,0,.8)'
+          }
+        }
+      },
+      afterClose () {
+        vm.$nextTick(() => {
+          vm.$refs.form.reset()
+        })
+      }
+    })
   },
   methods: {
     async onClickedLogin (invalid) {

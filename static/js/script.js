@@ -31,19 +31,19 @@ $('.qa_box > a').on('click', function () {
   }
 })
 /* login dialog */
-$('.fancybox').fancybox({
-  wrapCSS: 'fancybox-login',
-  padding: 40,
-  width: 800,
-  maxWidth: '100%',
-  helpers: {
-    overlay: {
-      css: {
-        background: 'rgba(0,0,0,.8)'
-      }
-    }
-  }
-})
+// $('.fancybox').fancybox({
+//   wrapCSS: 'fancybox-login',
+//   padding: 40,
+//   width: 800,
+//   maxWidth: '100%',
+//   helpers: {
+//     overlay: {
+//       css: {
+//         background: 'rgba(0,0,0,.8)'
+//       }
+//     }
+//   }
+// })
 /* reg login forget_pw change */
 // $(function () {
 //   $('#login_dialog #registered_dialog_inner, #registered_dialog #login_dialog_inner2, #forget_pw_dialog_inner, #forget_pw_dialog_inner2').hide()

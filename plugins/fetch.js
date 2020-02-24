@@ -1,11 +1,10 @@
 // import errMsgs from '@/config/errMsgs'
 import errCodes from '@/config/errCodes'
-const host = require('@/config/host')
 
 export default ({ app, store, $axios, redirect }, inject) => {
   // axios回傳值調整
   const axiosInstance = $axios.create({
-    baseURL: `http://${host.prefix}.${host[process.env.DEV_ENV]}`,
+    baseURL: `http://${process.env.PHP_API_BASE_URL}`,
     validateStatus (status) {
       if (status === 401) {
         store.dispatch('user/clear')

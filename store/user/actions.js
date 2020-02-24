@@ -59,7 +59,7 @@ export default {
   },
   async updateProfile ({ commit, dispatch }, _d) {
     const data = {
-      mail: _d.mail,
+      email: _d.email,
       phone: _d.phone
     }
     const res = await this.$api.updateProfile(data)

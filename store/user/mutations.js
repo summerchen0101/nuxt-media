@@ -15,11 +15,8 @@ export default {
   gotProfile (state, _d) {
     state.profile = Object.assign({}, state.profile, {
       account: _d.account,
-      nick: _d.display_name,
       phone: _d.phone,
-      phone_approve: _d.phone_approve,
-      mail: _d.mail,
-      mail_approve: _d.mail_approve
+      email: _d.mail
     })
   }
 }

@@ -1,10 +1,7 @@
 export const initProfile = () => ({
   account: '',
-  nick: '',
   phone: '',
-  phone_approve: 'N',
-  mail: '',
-  mail_approve: 'N'
+  email: ''
 })
 export default function () {
   return {

@@ -13,7 +13,7 @@
         <div id="tab1" class="tab_content">
           <ValidationObserver v-slot="{ invalid }">
             <form class="form-horizontal contact_form">
-              <div class="setting_upload_img_box row">
+              <!-- <div class="setting_upload_img_box row">
                 <div class="col-xs-12 col-md-2 setting_upload_img">
                   <img src="/images/member/setting_upload_img.png" alt="">
                 </div>
@@ -25,21 +25,13 @@
                     支持JPG、JPEG、GIF、PNG格式，图片不得超过2M
                   </div>
                 </div>
-              </div>
+              </div> -->
+              <div style="margin-top: 20px" />
               <div class="form-group setting_group">
                 <label for="user_id" class="control-label">帐号</label>
                 <div>
                   <ValidationProvider v-slot="v" rules="required|account" name="account">
-                    <input id="user_id" v-model="form.account" type="text" class="form-control">
-                    <span class="text-danger">{{ v.errors[0] }}</span>
-                  </ValidationProvider>
-                </div>
-              </div>
-              <div class="form-group left_group">
-                <label for="name" class="control-label">暱称</label>
-                <div>
-                  <ValidationProvider v-slot="v" rules="required" name="nick">
-                    <input id="name" v-model="form.nick" type="text" class="form-control">
+                    <input id="user_id" v-model="form.account" type="text" class="form-control" disabled>
                     <span class="text-danger">{{ v.errors[0] }}</span>
                   </ValidationProvider>
                 </div>

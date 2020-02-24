@@ -1,5 +1,5 @@
 const apiModules = {
-  ...require('~/lib/user')
+  ...require('~/lib/api/user')
 }
 
 export default ({ app }, inject) => {

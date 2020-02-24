@@ -66,6 +66,18 @@ export default {
     if (res.code === '0') {
       this.$router.app.$alert('资料更新成功', { type: 'success' })
     }
+  },
+  async updatePw ({ commit, dispatch }, _d) {
+    const data = {
+      old_password: _d.old_pw,
+      password: _d.pw,
+      password_confirmation: _d.pw_c
+    }
+    const res = await this.$api.updatePw(data)
+    if (res.code === '0') {
+      this.$router.app.$alert('密碼更新成功', { type: 'success' })
+    }
+    return res
   }
 
 }

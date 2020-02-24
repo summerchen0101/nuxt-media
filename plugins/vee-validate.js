@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { ValidationProvider, ValidationObserver, extend, localize } from 'vee-validate'
-// import en from 'vee-validate/dist/locale/en.json'
 import zhCN from 'vee-validate/dist/locale/zh_CN.json'
+import { fields } from '@/lib/validate/field'
 
 localize('zh_CN', {
   ...zhCN,
@@ -19,7 +19,10 @@ extend('required', {
       valid: !['', null, undefined].includes(value)
     }
   },
-  computesRequired: true
+  computesRequired: true,
+  message: (fieldName, placeholder) => {
+    return `${fields[fieldName] || fieldName}为必填`
+  }
 })
 
 extend('account', {
@@ -44,7 +47,7 @@ extend('email', {
 extend('match', {
   params: ['target'],
   validate (value, { target }) {
-    return value === target
+    return value === fields[target] || target
   },
   message: '密码不符合'
 })

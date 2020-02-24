@@ -18,5 +18,9 @@
   "updateProfile": {
     "method": "put",
     "url": "client/profile"
+  },
+  "updatePw": {
+    "method": "put",
+    "url": "client/profile/password"
   }
 }

@@ -1,4 +1,3 @@
-// import errMsgs from '@/config/errMsgs'
 import errCodes from '@/config/errCodes'
 
 export default ({ app, store, $axios, redirect }, inject) => {
@@ -15,6 +14,7 @@ export default ({ app, store, $axios, redirect }, inject) => {
   })
   axiosInstance.onResponse((res) => {
     handleErrorCode(app, store, res)
+    console.log(res.data)
     return res.data
   }, (error) => {
     console.log(error)
@@ -50,18 +50,4 @@ function handleErrorCode (app, store, { data, config }) {
     }
     app.router.app.$alert(msg)
   }
-  // else if (resCode !== '0' && resMsg) {
-  //   if (resMsg === 'Unauthenticated.') {
-  //     app.router.push({ name: 'index' })
-  //     store.dispatch('user/clear')
-  //   } else if (typeof resMsg === 'string') {
-  //     app.router.app.$alert(errMsgs[resMsg] || resMsg)
-  //   } else if (Array.isArray(resMsg)) {
-  //     const msgs = resMsg.reduce((str, msg) => {
-  //       str += (errMsgs[resMsg] || resMsg) + '\n'
-  //       return str
-  //     }, '')
-  //     app.router.app.$alert(msgs)
-  //   }
-  // }
 }

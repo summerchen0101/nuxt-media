@@ -11,88 +11,11 @@
       </ul>
       <div class="tab_container">
         <div id="tab1" class="tab_content">
-          <ValidationObserver v-slot="{ invalid }">
-            <form class="form-horizontal contact_form">
-              <!-- <div class="setting_upload_img_box row">
-                <div class="col-xs-12 col-md-2 setting_upload_img">
-                  <img src="/images/member/setting_upload_img.png" alt="">
-                </div>
-                <div class="col-xs-12 col-md-10 setting_upload_txt">
-                  <button class="setting_upload_img_btn">
-                    选择照片上传
-                  </button>
-                  <div class="setting_upload_img_note">
-                    支持JPG、JPEG、GIF、PNG格式，图片不得超过2M
-                  </div>
-                </div>
-              </div> -->
-              <div style="margin-top: 20px" />
-              <div class="form-group setting_group">
-                <label for="user_id" class="control-label">帐号</label>
-                <div>
-                  <ValidationProvider v-slot="v" rules="required|account" name="account">
-                    <input id="user_id" v-model="form.account" type="text" class="form-control" disabled>
-                    <span class="text-danger">{{ v.errors[0] }}</span>
-                  </ValidationProvider>
-                </div>
-              </div>
-              <div class="form-group left_group">
-                <label for="email" class="control-label">信箱</label>
-                <div>
-                  <ValidationProvider v-slot="v" rules="required|email" name="email">
-                    <input id="email" v-model="form.email" type="email" class="form-control">
-                    <span class="text-danger">{{ v.errors[0] }}</span>
-                  </ValidationProvider>
-                </div>
-              </div>
-              <div class="form-group right_group">
-                <label for="phone" class="control-label">手机</label>
-                <div>
-                  <ValidationProvider v-slot="v" rules="required|phone" name="phone">
-                    <input id="phone" v-model="form.phone" type="text" class="form-control">
-                    <span class="text-danger">{{ v.errors[0] }}</span>
-                  </ValidationProvider>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="page_form_btn">
-                  <button class="btn save_btn" :disabled="invalid" @click.prevent="onSubmit">
-                    储存设置
-                  </button>
-                </div>
-              </div>
-            </form>
-          </ValidationObserver>
+          <Basic :form="form" />
         </div>
         <!-- #tab1 -->
         <div id="tab2" class="tab_content">
-          <form class="form-horizontal contact_form pw_form">
-            <div class="form-group">
-              <label for="old_pw" class="control-label">旧密码</label>
-              <div>
-                <input id="old_pw" type="text" class="form-control">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="new_pw" class="control-label">新密码</label>
-              <div>
-                <input id="new_pw" type="text" class="form-control">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="check_pw" class="control-label">确认密码</label>
-              <div>
-                <input id="check_pw" type="text" class="form-control">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="page_form_btn">
-                <button type="submit" class="btn save_btn">
-                  储存设置
-                </button>
-              </div>
-            </div>
-          </form>
+          <Password />
         </div>
         <!-- #tab2 -->
       </div>
@@ -102,9 +25,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 export default {
   name: 'Profile',
+  components: {
+    Basic: () => import('@/components/profile/Basic.vue'),
+    Password: () => import('@/components/profile/Password.vue')
+  },
   async asyncData ({ store, redirect }) {
     try {
       await store.dispatch('user/getProfile')
@@ -119,18 +45,10 @@ export default {
     return {
     }
   },
-  computed: {
-    ...mapGetters({
-      profile: 'user/profile'
-    })
-  },
   mounted () {
     jqFix()
   },
   methods: {
-    async onSubmit () {
-      await this.$store.dispatch('user/updateProfile', this.form)
-    }
   },
   head () {
     return {}

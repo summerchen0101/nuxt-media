@@ -89,3 +89,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# server錯誤報告
+report.*.json

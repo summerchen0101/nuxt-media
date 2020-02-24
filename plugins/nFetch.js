@@ -1,8 +1,7 @@
 export default ({ app, store, $axios, redirect }, inject) => {
-  if (process.client) {
-    const nodeInstance = $axios.create({
-      baseURL: `${location.protocol}//${location.host}`
-    })
-    inject('nFetch', nodeInstance)
-  }
+  const baseURL = `http://${process.env.HOST}:${process.env.PORT}`
+  const nodeInstance = $axios.create({
+    baseURL
+  })
+  inject('nFetch', nodeInstance)
 }

@@ -1,5 +1,6 @@
 export default {
-  clear ({ commit }) {
+  async clear ({ commit }) {
+    await this.$nFetch.delete('session/auth')
     commit('clearToken')
     commit('clearUser')
     commit('switchLoginStatus', false)
@@ -33,9 +34,7 @@ export default {
     if (res.code === '0') {
       this.$router.push({ name: 'index' })
       this.$router.app.$alert('登出成功', { type: 'success' })
-      commit('switchLoginStatus', false)
-      commit('clearToken')
-      this.$nFetch.delete('session/auth')
+      dispatch('clear')
     }
   },
   async register ({ commit, dispatch }, _d) {
@@ -58,8 +57,12 @@ export default {
       commit('gotProfile', res.data)
     }
   },
-  async updateProfile ({ commit, dispatch }, profile) {
-    const res = await this.$api.updateProfile(profile)
+  async updateProfile ({ commit, dispatch }, _d) {
+    const data = {
+      mail: _d.mail,
+      phone: _d.phone
+    }
+    const res = await this.$api.updateProfile(data)
     if (res.code === '0') {
       this.$router.app.$alert('资料更新成功', { type: 'success' })
     }

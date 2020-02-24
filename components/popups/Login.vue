@@ -50,15 +50,18 @@
 </template>
 
 <script>
+function initForm () {
+  return {
+    account: '',
+    pw: ''
+  }
+}
 export default {
   name: 'LoginPopup',
   components: {},
   data () {
     return {
-      form: {
-        account: '',
-        pw: ''
-      },
+      form: initForm(),
       loading: false
     }
   },
@@ -77,6 +80,7 @@ export default {
         }
       },
       afterClose () {
+        vm.form = initForm()
         vm.$nextTick(() => {
           vm.$refs.form.reset()
         })

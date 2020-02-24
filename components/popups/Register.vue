@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
               <div class="col-xs-12">
-                <ValidationProvider v-slot="v" rules="required|match:@pw" name="pw_c">
+                <ValidationProvider v-slot="v" rules="required|match:@pw" name="pw_confirm">
                   <input v-model="form.pw_c" type="password" class="form-control" placeholder="确认密码">
                   <span class="text-danger">{{ v.errors[0] }}</span>
                 </ValidationProvider>
@@ -62,16 +62,19 @@
 </template>
 
 <script>
+function initForm () {
+  return {
+    account: '',
+    pw: '',
+    pw_c: ''
+  }
+}
 export default {
   name: 'LoginPopup',
   components: {},
   data () {
     return {
-      form: {
-        account: '',
-        pw: '',
-        pw_c: ''
-      }
+      form: initForm()
     }
   },
   mounted () {
@@ -89,6 +92,7 @@ export default {
         }
       },
       afterClose () {
+        vm.form = initForm()
         vm.$nextTick(() => {
           vm.$refs.form.reset()
         })

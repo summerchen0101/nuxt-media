@@ -20,5 +20,6 @@ module.exports = {
   },
   globals: {
     '$': true,
+    '_': true,
   }
 }

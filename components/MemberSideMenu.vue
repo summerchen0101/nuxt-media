@@ -50,7 +50,6 @@ export default {
   name: 'MemberSideMenu',
   components: {},
   mounted () {
-    console.log(this.$route)
   }
 }
 </script>

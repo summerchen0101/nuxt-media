@@ -1,5 +1,9 @@
+import { AD } from '~/lib/api/ad'
+import { USER } from '~/lib/api/user'
+
 const apiModules = {
-  ...require('~/lib/api/user')
+  ...AD,
+  ...USER
 }
 
 export default ({ app }, inject) => {

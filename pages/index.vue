@@ -1,14 +1,17 @@
 <template>
   <div>
     <div class="banner-box">
-      <div class="item">
-        <img src="images/index/pc-banner1.jpg" class="show-pc">
-        <img src="images/index/mb-banner1.jpg" alt="" class="show-mb">
-      </div>
-      <div class="item">
-        <img src="images/index/pc-banner1.jpg" class="show-pc">
-        <img src="images/index/mb-banner1.jpg" alt="" class="show-mb">
-      </div>
+      <a
+        v-for="(ad, index) in ads[1]"
+        :key="index"
+        :title="ad.title"
+        class="item"
+        :href="ad.url"
+        :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+      >
+        <img :src="ad.image_url" class="show-pc">
+        <img :src="ad.image_url" alt="" class="show-mb">
+      </a>
     </div>
     <div class="index_container">
       <!--index block start-->
@@ -84,7 +87,16 @@
           </div>
           <!--index_content end-->
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img src="/images/ad-img-index.png" alt=""></a>
+            <a
+              v-for="(ad, index) in columeAds"
+              :key="index"
+              :title="ad.title"
+              class="item"
+              :href="ad.url"
+              :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+            >
+              <img :src="ad.image_url">
+            </a>
           </div>
         </div>
         <!--container end-->
@@ -125,7 +137,16 @@
           </div>
           <!--index_content end-->
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img src="/images/ad-img-index.png" alt=""></a>
+            <a
+              v-for="(ad, index) in columeAds"
+              :key="index"
+              :title="ad.title"
+              class="item"
+              :href="ad.url"
+              :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+            >
+              <img :src="ad.image_url">
+            </a>
           </div>
         </div>
         <!--container end-->
@@ -202,7 +223,16 @@
           </div>
           <!--index_content end-->
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img src="/images/ad-img-index.png" alt=""></a>
+            <a
+              v-for="(ad, index) in columeAds"
+              :key="index"
+              :title="ad.title"
+              class="item"
+              :href="ad.url"
+              :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+            >
+              <img :src="ad.image_url">
+            </a>
           </div>
         </div>
         <!--container end-->
@@ -232,7 +262,16 @@
           </div>
           <!--index_content end-->
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img src="/images/ad-img-index.png" alt=""></a>
+            <a
+              v-for="(ad, index) in columeAds"
+              :key="index"
+              :title="ad.title"
+              class="item"
+              :href="ad.url"
+              :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+            >
+              <img :src="ad.image_url">
+            </a>
           </div>
         </div>
         <!--container end-->
@@ -261,7 +300,16 @@
           </div>
           <!--index_content end-->
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img src="/images/ad-img-index.png" alt=""></a>
+            <a
+              v-for="(ad, index) in columeAds"
+              :key="index"
+              :title="ad.title"
+              class="item"
+              :href="ad.url"
+              :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+            >
+              <img :src="ad.image_url">
+            </a>
           </div>
         </div>
         <!--container end-->
@@ -269,21 +317,36 @@
       <!--index block end-->
     </div>
     <!--index_container end-->
+    <pre>{{ $store.state.ad.ads }}</pre>
     <Footer />
     <IndexScrollTop />
   </div>
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   name: 'Index',
   layout: 'main',
+  async asyncData ({ store, redirect }) {
+    try {
+      await store.dispatch('ad/getAds')
+    } catch (err) {
+      console.log(err)
+    }
+    return {}
+  },
   data () {
     return {
     }
   },
   computed: {
+    ...mapGetters({
+      ads: 'ad/ads'
+    }),
+    columeAds () {
+      return _.shuffle(this.ads[2])
+    }
   },
   created () {
   },

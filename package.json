@@ -20,6 +20,7 @@
     "element-ui": "^2.4.11",
     "jquery": "^3.4.1",
     "koa": "^2.6.2",
+    "lodash": "^4.17.15",
     "node-sass": "^4.13.1",
     "nuxt": "^2.0.0",
     "parse-domain": "^2.3.4",

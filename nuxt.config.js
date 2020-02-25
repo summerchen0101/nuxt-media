@@ -3,6 +3,7 @@
  * TODO: 加上vee-validate 做表單驗證
  */
 const session = require('express-session')
+const webpack = require('webpack')
 
 require('dotenv').config()
 module.exports = {
@@ -93,6 +94,11 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        _: 'lodash'
+      })
+    ],
     transpile: [/^element-ui/],
     /*
     ** You can extend webpack config here

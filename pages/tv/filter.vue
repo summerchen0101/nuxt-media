@@ -100,7 +100,16 @@
         </div>
         <div class="tv_sub_right col-xs-12 col-sm-9 col-md-10">
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img src="/images/ad-img-l.png" alt=""></a>
+            <a
+              v-for="(ad, index) in ads[3]"
+              :key="index"
+              :title="ad.title"
+              class="item"
+              :href="ad.url"
+              :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+            >
+              <img :src="ad.image_url">
+            </a>
           </div>
           <div class="filter_box">
             <span class="filter_title">筛选条件：</span>
@@ -131,7 +140,16 @@
             </nuxt-link>
           </div>
           <div class="ad-box mb-20">
-            <a href="" target="_blank"><img src="/images/ad-img-l.png" alt=""></a>
+            <a
+              v-for="(ad, index) in ads[4]"
+              :key="index"
+              :title="ad.title"
+              class="item"
+              :href="ad.url"
+              :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+            >
+              <img :src="ad.image_url">
+            </a>
           </div>
           <div class="page_list">
             <a href=""><i class="fa fa-angle-left" aria-hidden="true" /></a>
@@ -156,12 +174,22 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'FilterPage',
   layout: 'main',
   components: {},
+  async asyncData ({ store, redirect }) {
+    await store.dispatch('ad/getAds')
+    return {}
+  },
   data () {
     return {}
+  },
+  computed: {
+    ...mapGetters({
+      ads: 'ad/ads'
+    })
   },
   mounted () {
     $('.imgLiquidFill').imgLiquid()

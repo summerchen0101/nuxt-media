@@ -4,6 +4,7 @@
  */
 const session = require('express-session')
 const webpack = require('webpack')
+const MemoryStore = require('memorystore')(session)
 
 require('dotenv').config()
 module.exports = {
@@ -120,10 +121,13 @@ module.exports = {
     // bodyParser.json(),
     // session middleware
     session({
+      store: new MemoryStore({
+        checkPeriod: 86400000 // prune expired entries every 24h
+      }),
       secret: 'summer-is-cool',
       resave: false,
       saveUninitialized: false,
-      cookie: { maxAge: 60000 }
+      cookie: { maxAge: 86400000 }
     }),
     { path: '/session', handler: '~/server/api' }
   ]

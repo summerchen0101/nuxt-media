@@ -251,7 +251,16 @@
             </div>
             <!--tv_detail_hot_select end-->
             <div class="ad-box mb-20">
-              <a href="" target="_blank"><img src="/images/ad-img-l.png" alt=""></a>
+              <a
+                v-for="(ad, index) in ads[6]"
+                :key="index"
+                :title="ad.title"
+                class="item"
+                :href="ad.url"
+                :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+              >
+                <img :src="ad.image_url">
+              </a>
             </div>
             <div class="tv_detail_comment">
               <div class="tv_detail_head">
@@ -296,7 +305,16 @@
           </div>
           <div class="tv_detail_right col-xs-12 col-sm-4 col-md-3">
             <div class="ad-box mb-20">
-              <a href="" target="_blank"><img src="/images/ad-img-s.png" alt=""></a>
+              <a
+                v-for="(ad, index) in ads[5]"
+                :key="index"
+                :title="ad.title"
+                class="item"
+                :href="ad.url"
+                :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+              >
+                <img :src="ad.image_url">
+              </a>
             </div>
             <div class="maybe_like_box">
               <div class="maybe_like_mtitle">
@@ -383,12 +401,26 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'VideoDetail',
   layout: 'main',
   components: {},
+  async asyncData ({ store, redirect }) {
+    try {
+      await store.dispatch('ad/getAds')
+    } catch (err) {
+      console.log(err)
+    }
+    return {}
+  },
   data () {
     return {}
+  },
+  computed: {
+    ...mapGetters({
+      ads: 'ad/ads'
+    })
   },
   mounted () {
     $('.imgLiquidFill').imgLiquid()

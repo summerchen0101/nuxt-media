@@ -35,7 +35,7 @@ export default {
     try {
       await store.dispatch('user/getProfile')
     } catch (err) {
-      // redirect({ name: 'index' })
+      redirect({ name: 'index' })
     }
     return {
       form: Object.assign({}, store.state.user.profile)

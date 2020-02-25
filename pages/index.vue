@@ -317,7 +317,6 @@
       <!--index block end-->
     </div>
     <!--index_container end-->
-    <pre>{{ $store.state.ad.ads }}</pre>
     <Footer />
     <IndexScrollTop />
   </div>

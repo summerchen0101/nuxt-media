@@ -14,7 +14,6 @@ export default ({ app, store, $axios, redirect }, inject) => {
   })
   axiosInstance.onResponse((res) => {
     handleErrorCode(app, store, res)
-    console.log(res.data)
     return res.data
   }, (error) => {
     console.log(error)

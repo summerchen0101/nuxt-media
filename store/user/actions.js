@@ -75,7 +75,7 @@ export default {
     }
     const res = await this.$api.updatePw(data)
     if (res.code === '0') {
-      this.$router.app.$alert('密碼更新成功', { type: 'success' })
+      this.$router.app.$alert('密码更新成功', { type: 'success' })
     }
     return res
   }

@@ -1,27 +1,36 @@
 <template>
-  <div class="company_right col-xs-12 col-sm-9 col-md-9">
+  <div v-if="data" class="company_right col-xs-12 col-sm-9 col-md-9">
     <div class="company_title">
-      <i class="icon-customer-support" /><span>服务介绍</span>
+      <i class="icon-customer-support" /><span>{{ data.title }}</span>
     </div>
-    <div class="company_content">
-      开空热古？质人画照列县……展业是百意……进湾全听、有足识李生不厂更家。建能有党程军苦里大福地尔，神世白。五叫丽投做来痛本了状老们育巴深妈记叶我长才的条海念其风趣斯全员和进。<br><br>
-
-      国行怎票，张当样重口考儿市不发造小候年且公活水飞告了，她因在亮厂。<br><br>
-
-      友的有问的电局，评三文；人信要年资事助，令自共！施常儿看如不根本想有素科于女春，要特利！只参如下新外乐；服纪了要面空不不，一视产远张以细人天校，感模生间，股的你愿，大了乐取子，生什的究原不；方最心上：外点知黄把小温，将展了进负人读活叫去，太现一臺每留：知里任的也时分怀厂，已惊的可子了是。示一艺画、学面呢至以再……流生此些官压。书不光球机样票点保夜欢起天施？生答等开剧本间达？然一年士大、人西海能自何已人妈面能有厂写共里静国！下口名我她国最实极，在高罗鱼回分是动法银公次学？中感李那生而巴边色连人的孩日子可车事地要中视李难不广司而把脑是。德此无美……美构量模火对子音前，元来生以真的东近名改须他一到什老南。请亲所利回客要角一个饭表销夫谈。刻进？<br><br>
-
-      快爸过学例会过信平路此时的事平业我华水经营有我争什、这张相怎给景物一约别生研可！不现一美，和活回开雄……长许拿走算车兴阿点足后；水去加现的！告令案天地出能带资你现；不系趣在的许日老要？我统去，这子前这商我儿意阳片的；星站闻力才出知定续臺第里程製一规种给式河千利的始？可国以坐子新销，面支从真臺二上张年说性他外那居始。业车立情分交员一级轻不文最特；我益举还突高？死拉来……的儿多我可种去车表在特比；大在理我期是市界生的；里闻。
-    </div>
+    <div class="company_content" v-html="data.contents" />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'Service',
   components: {
   },
+  async asyncData ({ store, redirect }) {
+    try {
+      await store.dispatch('site/getInfo')
+    } catch (err) {
+      console.log(err)
+    }
+    return {}
+  },
   data () {
     return {}
+  },
+  computed: {
+    ...mapGetters({
+      info: 'site/info'
+    }),
+    data () {
+      return this.info.Service
+    }
   },
   mounted () {
   },

@@ -323,7 +323,7 @@
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   name: 'Index',
   layout: 'main',
@@ -333,15 +333,16 @@ export default {
     } catch (err) {
       console.log(err)
     }
-    return {
-      ads: Object.assign({}, store.getters['ad/ads'])
-    }
+    return {}
   },
   data () {
     return {
     }
   },
   computed: {
+    ...mapGetters({
+      ads: 'ad/ads'
+    }),
     columeAds () {
       return _.shuffle(this.ads[2])
     }

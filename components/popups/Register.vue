@@ -39,7 +39,7 @@
             </div>
             <div class="registered_dialog_txt">
               点击创建帐户，即表示同意相关
-              <a href="/other/service" target="service">
+              <a href="/other/service">
                 服务条款
               </a>
             </div>

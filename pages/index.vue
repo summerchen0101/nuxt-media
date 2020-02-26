@@ -323,7 +323,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 export default {
   name: 'Index',
   layout: 'main',
@@ -333,21 +333,21 @@ export default {
     } catch (err) {
       console.log(err)
     }
-    return {}
+    return {
+      ads: Object.assign({}, store.getters['ad/ads'])
+    }
   },
   data () {
     return {
     }
   },
   computed: {
-    ...mapGetters({
-      ads: 'ad/ads'
-    }),
     columeAds () {
       return _.shuffle(this.ads[2])
     }
   },
   created () {
+    this.$nFetch.post('session/auth', { token: 123 })
   },
   mounted () {
     $('.imgLiquidFill').imgLiquid()

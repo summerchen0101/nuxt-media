@@ -2,7 +2,7 @@
   <div>
     <div class="banner-box">
       <a
-        v-for="(ad, index) in ads[1]"
+        v-for="(ad, index) in topAds"
         :key="index"
         :title="ad.title"
         class="item"
@@ -86,16 +86,7 @@
             <!--rank_box end-->
           </div>
           <!--index_content end-->
-          <div v-if="columeAd" class="ad-box mb-20">
-            <a
-              :title="columeAd.title"
-              class="item"
-              :href="columeAd.url"
-              :target="columeAd.is_blank == 'Y' ? '_blank' : 'self'"
-            >
-              <img :src="columeAd.image_url">
-            </a>
-          </div>
+          <BlockAd :ad="fixedBlockAds[0]" />
         </div>
         <!--container end-->
       </div>
@@ -134,16 +125,7 @@
             </div>
           </div>
           <!--index_content end-->
-          <div v-if="columeAd" class="ad-box mb-20">
-            <a
-              :title="columeAd.title"
-              class="item"
-              :href="columeAd.url"
-              :target="columeAd.is_blank == 'Y' ? '_blank' : 'self'"
-            >
-              <img :src="columeAd.image_url">
-            </a>
-          </div>
+          <BlockAd :ad="fixedBlockAds[1]" />
         </div>
         <!--container end-->
       </div>
@@ -218,16 +200,7 @@
             <!--rank_box end-->
           </div>
           <!--index_content end-->
-          <div v-if="columeAd" class="ad-box mb-20">
-            <a
-              :title="columeAd.title"
-              class="item"
-              :href="columeAd.url"
-              :target="columeAd.is_blank == 'Y' ? '_blank' : 'self'"
-            >
-              <img :src="columeAd.image_url">
-            </a>
-          </div>
+          <BlockAd :ad="fixedBlockAds[2]" />
         </div>
         <!--container end-->
       </div>
@@ -255,16 +228,7 @@
             </div>
           </div>
           <!--index_content end-->
-          <div v-if="columeAd" class="ad-box mb-20">
-            <a
-              :title="columeAd.title"
-              class="item"
-              :href="columeAd.url"
-              :target="columeAd.is_blank == 'Y' ? '_blank' : 'self'"
-            >
-              <img :src="columeAd.image_url">
-            </a>
-          </div>
+          <BlockAd :ad="fixedBlockAds[3]" />
         </div>
         <!--container end-->
       </div>
@@ -291,16 +255,7 @@
             </div>
           </div>
           <!--index_content end-->
-          <div v-if="columeAd" class="ad-box mb-20">
-            <a
-              :title="columeAd.title"
-              class="item"
-              :href="columeAd.url"
-              :target="columeAd.is_blank == 'Y' ? '_blank' : 'self'"
-            >
-              <img :src="columeAd.image_url">
-            </a>
-          </div>
+          <BlockAd :ad="fixedBlockAds[4]" />
         </div>
         <!--container end-->
       </div>
@@ -317,6 +272,9 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'Index',
   layout: 'main',
+  components: {
+    BlockAd: () => import('@/components/index/BlockAd')
+  },
   async asyncData ({ store, redirect }) {
     try {
       await store.dispatch('ad/getAds')
@@ -331,10 +289,17 @@ export default {
   },
   computed: {
     ...mapGetters({
-      ads: 'ad/ads'
+      topAds: 'ad/indexTopAds',
+      blockAds: 'ad/indexBlockAds'
     }),
-    columeAd () {
-      return _.shuffle(this.ads[2]) && _.shuffle(this.ads[2])[0]
+    fixedBlockAds () {
+      const blockNum = 5
+      const _arr = []
+      const _shuffleArr = _.shuffle(this.blockAds)
+      for (let i = 0; i < blockNum; i++) {
+        _arr.push(_shuffleArr[i % _shuffleArr.length])
+      }
+      return _arr
     }
   },
   created () {

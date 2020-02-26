@@ -7,7 +7,7 @@
         :title="ad.title"
         class="item"
         :href="ad.url"
-        :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+        :target="ad.is_blank == 'Y' ? '_blank' : '_self'"
       >
         <img :src="ad.image_url" class="show-pc">
         <img :src="ad.image_url" alt="" class="show-mb">
@@ -305,6 +305,7 @@ export default {
   created () {
   },
   mounted () {
+    this.$store.dispatch('ad/getAds')
     $('.imgLiquidFill').imgLiquid()
     $('.banner-box').slick({
       infinite: true,

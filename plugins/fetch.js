@@ -3,7 +3,7 @@ import errCodes from '@/config/errCodes'
 export default ({ app, store, $axios, redirect }, inject) => {
   // axios回傳值調整
   const axiosInstance = $axios.create({
-    baseURL: `http://${process.env.PHP_API_BASE_URL}`,
+    baseURL: `${process.env.PROTOCOL}://${process.env.PHP_API_BASE_URL}`,
     validateStatus (status) {
       if (status === 401) {
         store.dispatch('user/clear')

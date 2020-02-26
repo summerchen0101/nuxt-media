@@ -37,7 +37,7 @@ async function start () {
   })
 
   app.listen(port, host)
-  const url = `http://${host}:${port}`
+  const url = `${process.env.PROTOCOL}://${host}:${port}`
   // opn(url, { app: 'google chrome' })
   consola.ready({
     message: `Server listening on ${url}`,

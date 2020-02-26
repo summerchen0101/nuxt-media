@@ -86,16 +86,14 @@
             <!--rank_box end-->
           </div>
           <!--index_content end-->
-          <div class="ad-box mb-20">
+          <div v-if="columeAd" class="ad-box mb-20">
             <a
-              v-for="(ad, index) in columeAds"
-              :key="index"
-              :title="ad.title"
+              :title="columeAd.title"
               class="item"
-              :href="ad.url"
-              :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+              :href="columeAd.url"
+              :target="columeAd.is_blank == 'Y' ? '_blank' : 'self'"
             >
-              <img :src="ad.image_url">
+              <img :src="columeAd.image_url">
             </a>
           </div>
         </div>
@@ -136,16 +134,14 @@
             </div>
           </div>
           <!--index_content end-->
-          <div class="ad-box mb-20">
+          <div v-if="columeAd" class="ad-box mb-20">
             <a
-              v-for="(ad, index) in columeAds"
-              :key="index"
-              :title="ad.title"
+              :title="columeAd.title"
               class="item"
-              :href="ad.url"
-              :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+              :href="columeAd.url"
+              :target="columeAd.is_blank == 'Y' ? '_blank' : 'self'"
             >
-              <img :src="ad.image_url">
+              <img :src="columeAd.image_url">
             </a>
           </div>
         </div>
@@ -222,16 +218,14 @@
             <!--rank_box end-->
           </div>
           <!--index_content end-->
-          <div class="ad-box mb-20">
+          <div v-if="columeAd" class="ad-box mb-20">
             <a
-              v-for="(ad, index) in columeAds"
-              :key="index"
-              :title="ad.title"
+              :title="columeAd.title"
               class="item"
-              :href="ad.url"
-              :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+              :href="columeAd.url"
+              :target="columeAd.is_blank == 'Y' ? '_blank' : 'self'"
             >
-              <img :src="ad.image_url">
+              <img :src="columeAd.image_url">
             </a>
           </div>
         </div>
@@ -261,16 +255,14 @@
             </div>
           </div>
           <!--index_content end-->
-          <div class="ad-box mb-20">
+          <div v-if="columeAd" class="ad-box mb-20">
             <a
-              v-for="(ad, index) in columeAds"
-              :key="index"
-              :title="ad.title"
+              :title="columeAd.title"
               class="item"
-              :href="ad.url"
-              :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+              :href="columeAd.url"
+              :target="columeAd.is_blank == 'Y' ? '_blank' : 'self'"
             >
-              <img :src="ad.image_url">
+              <img :src="columeAd.image_url">
             </a>
           </div>
         </div>
@@ -299,16 +291,14 @@
             </div>
           </div>
           <!--index_content end-->
-          <div class="ad-box mb-20">
+          <div v-if="columeAd" class="ad-box mb-20">
             <a
-              v-for="(ad, index) in columeAds"
-              :key="index"
-              :title="ad.title"
+              :title="columeAd.title"
               class="item"
-              :href="ad.url"
-              :target="ad.is_blank == 'Y' ? '_blank' : 'self'"
+              :href="columeAd.url"
+              :target="columeAd.is_blank == 'Y' ? '_blank' : 'self'"
             >
-              <img :src="ad.image_url">
+              <img :src="columeAd.image_url">
             </a>
           </div>
         </div>
@@ -343,8 +333,8 @@ export default {
     ...mapGetters({
       ads: 'ad/ads'
     }),
-    columeAds () {
-      return _.shuffle(this.ads[2])
+    columeAd () {
+      return _.shuffle(this.ads[2]) && _.shuffle(this.ads[2])[0]
     }
   },
   created () {
@@ -356,6 +346,8 @@ export default {
       slidesToShow: 1,
       slidesToScroll: 1
     })
+  },
+  methods: {
   },
   head () {
     return {

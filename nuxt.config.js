@@ -7,7 +7,11 @@ const webpack = require('webpack')
 const MemoryStore = require('memorystore')(session)
 
 require('dotenv').config()
+
 module.exports = {
+  env: {
+    ...process.env
+  },
   router: {
     linkActiveClass: 'select'
   },

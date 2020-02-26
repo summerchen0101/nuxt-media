@@ -347,7 +347,6 @@ export default {
     }
   },
   created () {
-    this.$nFetch.post('session/auth', { token: 123 })
   },
   mounted () {
     $('.imgLiquidFill').imgLiquid()

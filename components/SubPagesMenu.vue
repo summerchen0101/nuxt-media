@@ -14,20 +14,20 @@
         <i class="fa fa-chevron-right" />服务介绍
       </nuxt-link>
     </div>
-    <select name="here" onchange="location.href=this.options[this.selectedIndex].value;" class="company_left_mb">
+    <select name="here" class="company_left_mb" @change="onChangeLink">
       <option value="">
         请选择
       </option>
-      <option value="about.html">
+      <option value="about">
         关于我们
       </option>
-      <option value="qa.html">
+      <option value="faq">
         常见问题
       </option>
-      <option value="privacy.html">
+      <option value="privacy">
         隐私权政策
       </option>
-      <option value="service.html">
+      <option value="service">
         服务介绍
       </option>
     </select>
@@ -38,6 +38,11 @@
 export default {
   name: 'SubPagesMenu',
   components: {},
-  mounted () {}
+  mounted () {},
+  methods: {
+    onChangeLink (e) {
+      this.$router.push({ name: 'other-' + e.target.value })
+    }
+  }
 }
 </script>
